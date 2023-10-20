@@ -110,7 +110,9 @@ class GetDataset(Dataset):
       self.orography_path = params.orography_path
 
   def _get_files_stats(self):
+    print(self.location)
     self.files_paths = glob.glob(self.location + "/*.h5")
+    print(self.files_paths)
     self.files_paths.sort()
     self.n_years = len(self.files_paths)
     with h5py.File(self.files_paths[0], 'r') as _f:
@@ -147,7 +149,7 @@ class GetDataset(Dataset):
     year_idx = int(global_idx/self.n_samples_per_year) #which year we are on
     local_idx = int(global_idx%self.n_samples_per_year) #which sample in that year we are on - determines indices for centering
 
-    y_roll = np.random.randint(0, 1440) if self.train else 0#roll image in y direction
+    y_roll = np.random.randint(0, 144) if self.train else 0#roll image in y direction
 
     #open image file
     if self.files[year_idx] is None:

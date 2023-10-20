@@ -1,0 +1,925 @@
+2023-10-06 12:44:09,486 - root - INFO - --------------- Versions ---------------
+2023-10-06 12:44:09,489 - root - INFO - git branch: b'* master'
+2023-10-06 12:44:09,493 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-06 12:44:09,493 - root - INFO - Torch: 2.1.0+cu121
+2023-10-06 12:44:09,493 - root - INFO - ----------------------------------------
+2023-10-06 12:44:09,493 - root - INFO - ------------------ Configuration ------------------
+2023-10-06 12:44:09,493 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-06 12:44:09,493 - root - INFO - Configuration name: afno_backbone
+2023-10-06 12:44:09,493 - root - INFO - log_to_wandb True
+2023-10-06 12:44:09,493 - root - INFO - lr 0.0005
+2023-10-06 12:44:09,493 - root - INFO - batch_size 64
+2023-10-06 12:44:09,494 - root - INFO - max_epochs 150
+2023-10-06 12:44:09,494 - root - INFO - scheduler CosineAnnealingLR
+2023-10-06 12:44:09,494 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-06 12:44:09,494 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-06 12:44:09,494 - root - INFO - orography False
+2023-10-06 12:44:09,494 - root - INFO - orography_path None
+2023-10-06 12:44:09,494 - root - INFO - exp_dir results/era5_wind
+2023-10-06 12:44:09,494 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-06 12:44:09,494 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-06 12:44:09,494 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-06 12:44:09,494 - root - INFO - time_means_path results/time_means.npy
+2023-10-06 12:44:09,494 - root - INFO - global_means_path results/global_means.npy
+2023-10-06 12:44:09,494 - root - INFO - global_stds_path results/global_stds.npy
+2023-10-06 12:44:09,494 - root - INFO - loss l2
+2023-10-06 12:44:09,494 - root - INFO - num_data_workers 4
+2023-10-06 12:44:09,494 - root - INFO - dt 1
+2023-10-06 12:44:09,494 - root - INFO - n_history 0
+2023-10-06 12:44:09,494 - root - INFO - prediction_type iterative
+2023-10-06 12:44:09,494 - root - INFO - prediction_length 41
+2023-10-06 12:44:09,495 - root - INFO - n_initial_conditions 5
+2023-10-06 12:44:09,495 - root - INFO - ics_type default
+2023-10-06 12:44:09,495 - root - INFO - save_raw_forecasts True
+2023-10-06 12:44:09,495 - root - INFO - save_channel False
+2023-10-06 12:44:09,495 - root - INFO - masked_acc False
+2023-10-06 12:44:09,495 - root - INFO - maskpath None
+2023-10-06 12:44:09,495 - root - INFO - perturb False
+2023-10-06 12:44:09,495 - root - INFO - add_grid False
+2023-10-06 12:44:09,495 - root - INFO - N_grid_channels 0
+2023-10-06 12:44:09,495 - root - INFO - gridtype sinusoidal
+2023-10-06 12:44:09,495 - root - INFO - roll False
+2023-10-06 12:44:09,495 - root - INFO - num_blocks 8
+2023-10-06 12:44:09,495 - root - INFO - nettype afno
+2023-10-06 12:44:09,495 - root - INFO - patch_size 8
+2023-10-06 12:44:09,495 - root - INFO - width 56
+2023-10-06 12:44:09,495 - root - INFO - modes 32
+2023-10-06 12:44:09,495 - root - INFO - target default
+2023-10-06 12:44:09,495 - root - INFO - normalization zscore
+2023-10-06 12:44:09,495 - root - INFO - log_to_screen True
+2023-10-06 12:44:09,495 - root - INFO - save_checkpoint True
+2023-10-06 12:44:09,495 - root - INFO - enable_nhwc False
+2023-10-06 12:44:09,495 - root - INFO - optimizer_type FusedAdam
+2023-10-06 12:44:09,496 - root - INFO - crop_size_x None
+2023-10-06 12:44:09,496 - root - INFO - crop_size_y None
+2023-10-06 12:44:09,496 - root - INFO - two_step_training False
+2023-10-06 12:44:09,496 - root - INFO - plot_animations False
+2023-10-06 12:44:09,496 - root - INFO - add_noise False
+2023-10-06 12:44:09,496 - root - INFO - noise_std 0
+2023-10-06 12:44:09,496 - root - INFO - epsilon_factor 0
+2023-10-06 12:44:09,496 - root - INFO - world_size 1
+2023-10-06 12:44:09,496 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-06 12:44:09,496 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-06 12:44:09,496 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-06 12:44:09,496 - root - INFO - resuming False
+2023-10-06 12:44:09,496 - root - INFO - local_rank 0
+2023-10-06 12:44:09,496 - root - INFO - enable_amp True
+2023-10-06 12:44:09,496 - root - INFO - name afno_backbone_0
+2023-10-06 12:44:09,496 - root - INFO - group era5_precipafno_backbone
+2023-10-06 12:44:09,496 - root - INFO - project fourcastnet
+2023-10-06 12:44:09,496 - root - INFO - entity flowgan
+2023-10-06 12:44:09,496 - root - INFO - ---------------------------------------------------
+2023-10-06 12:48:08,056 - root - INFO - --------------- Versions ---------------
+2023-10-06 12:48:08,060 - root - INFO - git branch: b'* master'
+2023-10-06 12:48:08,063 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-06 12:48:08,063 - root - INFO - Torch: 2.1.0+cu121
+2023-10-06 12:48:08,064 - root - INFO - ----------------------------------------
+2023-10-06 12:48:08,064 - root - INFO - ------------------ Configuration ------------------
+2023-10-06 12:48:08,064 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-06 12:48:08,064 - root - INFO - Configuration name: afno_backbone
+2023-10-06 12:48:08,064 - root - INFO - log_to_wandb True
+2023-10-06 12:48:08,064 - root - INFO - lr 0.0005
+2023-10-06 12:48:08,064 - root - INFO - batch_size 64
+2023-10-06 12:48:08,064 - root - INFO - max_epochs 150
+2023-10-06 12:48:08,064 - root - INFO - scheduler CosineAnnealingLR
+2023-10-06 12:48:08,064 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-06 12:48:08,064 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-06 12:48:08,064 - root - INFO - orography False
+2023-10-06 12:48:08,064 - root - INFO - orography_path None
+2023-10-06 12:48:08,064 - root - INFO - exp_dir results/era5_wind
+2023-10-06 12:48:08,064 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-06 12:48:08,065 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-06 12:48:08,065 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-06 12:48:08,065 - root - INFO - time_means_path results/time_means.npy
+2023-10-06 12:48:08,065 - root - INFO - global_means_path results/global_means.npy
+2023-10-06 12:48:08,065 - root - INFO - global_stds_path results/global_stds.npy
+2023-10-06 12:48:08,065 - root - INFO - loss l2
+2023-10-06 12:48:08,065 - root - INFO - num_data_workers 4
+2023-10-06 12:48:08,065 - root - INFO - dt 1
+2023-10-06 12:48:08,065 - root - INFO - n_history 0
+2023-10-06 12:48:08,065 - root - INFO - prediction_type iterative
+2023-10-06 12:48:08,065 - root - INFO - prediction_length 41
+2023-10-06 12:48:08,065 - root - INFO - n_initial_conditions 5
+2023-10-06 12:48:08,065 - root - INFO - ics_type default
+2023-10-06 12:48:08,065 - root - INFO - save_raw_forecasts True
+2023-10-06 12:48:08,065 - root - INFO - save_channel False
+2023-10-06 12:48:08,065 - root - INFO - masked_acc False
+2023-10-06 12:48:08,065 - root - INFO - maskpath None
+2023-10-06 12:48:08,065 - root - INFO - perturb False
+2023-10-06 12:48:08,065 - root - INFO - add_grid False
+2023-10-06 12:48:08,066 - root - INFO - N_grid_channels 0
+2023-10-06 12:48:08,066 - root - INFO - gridtype sinusoidal
+2023-10-06 12:48:08,066 - root - INFO - roll False
+2023-10-06 12:48:08,066 - root - INFO - num_blocks 8
+2023-10-06 12:48:08,066 - root - INFO - nettype afno
+2023-10-06 12:48:08,066 - root - INFO - patch_size 8
+2023-10-06 12:48:08,066 - root - INFO - width 56
+2023-10-06 12:48:08,066 - root - INFO - modes 32
+2023-10-06 12:48:08,066 - root - INFO - target default
+2023-10-06 12:48:08,066 - root - INFO - normalization zscore
+2023-10-06 12:48:08,066 - root - INFO - log_to_screen True
+2023-10-06 12:48:08,066 - root - INFO - save_checkpoint True
+2023-10-06 12:48:08,066 - root - INFO - enable_nhwc False
+2023-10-06 12:48:08,066 - root - INFO - optimizer_type FusedAdam
+2023-10-06 12:48:08,066 - root - INFO - crop_size_x None
+2023-10-06 12:48:08,066 - root - INFO - crop_size_y None
+2023-10-06 12:48:08,066 - root - INFO - two_step_training False
+2023-10-06 12:48:08,066 - root - INFO - plot_animations False
+2023-10-06 12:48:08,066 - root - INFO - add_noise False
+2023-10-06 12:48:08,066 - root - INFO - noise_std 0
+2023-10-06 12:48:08,067 - root - INFO - epsilon_factor 0
+2023-10-06 12:48:08,067 - root - INFO - world_size 1
+2023-10-06 12:48:08,067 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-06 12:48:08,067 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-06 12:48:08,067 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-06 12:48:08,067 - root - INFO - resuming False
+2023-10-06 12:48:08,067 - root - INFO - local_rank 0
+2023-10-06 12:48:08,067 - root - INFO - enable_amp True
+2023-10-06 12:48:08,067 - root - INFO - name afno_backbone_0
+2023-10-06 12:48:08,067 - root - INFO - group era5_precipafno_backbone
+2023-10-06 12:48:08,067 - root - INFO - project fourcastnet
+2023-10-06 12:48:08,067 - root - INFO - entity psi6
+2023-10-06 12:48:08,067 - root - INFO - ---------------------------------------------------
+2023-10-06 12:48:11,990 - root - INFO - rank 0, begin data loader init
+2023-10-06 12:48:11,991 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-06 12:48:11,992 - root - INFO - Number of samples per year: 365
+2023-10-06 12:48:11,992 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 36 x 72 x 20
+2023-10-06 12:48:11,992 - root - INFO - Delta t: 6 hours
+2023-10-06 12:48:11,992 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-06 12:48:11,993 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-06 12:48:11,993 - root - INFO - Number of samples per year: 365
+2023-10-06 12:48:11,993 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 36 x 72 x 20
+2023-10-06 12:48:11,993 - root - INFO - Delta t: 6 hours
+2023-10-06 12:48:11,993 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-06 12:48:11,994 - root - INFO - rank 0, data loader initialized
+2023-10-06 12:48:13,852 - root - INFO - Number of trainable model parameters: 74691840
+2023-10-06 12:48:13,852 - root - INFO - Starting Training Loop...
+2023-10-19 10:53:49,250 - root - INFO - --------------- Versions ---------------
+2023-10-19 10:53:49,256 - root - INFO - git branch: b'* master'
+2023-10-19 10:53:49,260 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 10:53:49,260 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 10:53:49,260 - root - INFO - ----------------------------------------
+2023-10-19 10:53:49,260 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 10:53:49,260 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 10:53:49,260 - root - INFO - Configuration name: afno_backbone
+2023-10-19 10:53:49,260 - root - INFO - log_to_wandb True
+2023-10-19 10:53:49,260 - root - INFO - lr 0.0005
+2023-10-19 10:53:49,261 - root - INFO - batch_size 64
+2023-10-19 10:53:49,261 - root - INFO - max_epochs 150
+2023-10-19 10:53:49,261 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 10:53:49,261 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 10:53:49,261 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 10:53:49,261 - root - INFO - orography False
+2023-10-19 10:53:49,261 - root - INFO - orography_path None
+2023-10-19 10:53:49,261 - root - INFO - exp_dir results/era5_wind
+2023-10-19 10:53:49,261 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 10:53:49,261 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 10:53:49,261 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 10:53:49,261 - root - INFO - time_means_path results/time_means.npy
+2023-10-19 10:53:49,261 - root - INFO - global_means_path results/global_means.npy
+2023-10-19 10:53:49,261 - root - INFO - global_stds_path results/global_stds.npy
+2023-10-19 10:53:49,261 - root - INFO - loss l2
+2023-10-19 10:53:49,261 - root - INFO - num_data_workers 4
+2023-10-19 10:53:49,261 - root - INFO - dt 1
+2023-10-19 10:53:49,261 - root - INFO - n_history 0
+2023-10-19 10:53:49,261 - root - INFO - prediction_type iterative
+2023-10-19 10:53:49,262 - root - INFO - prediction_length 41
+2023-10-19 10:53:49,262 - root - INFO - n_initial_conditions 5
+2023-10-19 10:53:49,262 - root - INFO - ics_type default
+2023-10-19 10:53:49,262 - root - INFO - save_raw_forecasts True
+2023-10-19 10:53:49,262 - root - INFO - save_channel False
+2023-10-19 10:53:49,262 - root - INFO - masked_acc False
+2023-10-19 10:53:49,262 - root - INFO - maskpath None
+2023-10-19 10:53:49,262 - root - INFO - perturb False
+2023-10-19 10:53:49,262 - root - INFO - add_grid False
+2023-10-19 10:53:49,262 - root - INFO - N_grid_channels 0
+2023-10-19 10:53:49,262 - root - INFO - gridtype sinusoidal
+2023-10-19 10:53:49,262 - root - INFO - roll False
+2023-10-19 10:53:49,262 - root - INFO - num_blocks 8
+2023-10-19 10:53:49,262 - root - INFO - nettype afno
+2023-10-19 10:53:49,262 - root - INFO - patch_size 8
+2023-10-19 10:53:49,262 - root - INFO - width 56
+2023-10-19 10:53:49,262 - root - INFO - modes 32
+2023-10-19 10:53:49,262 - root - INFO - target default
+2023-10-19 10:53:49,262 - root - INFO - normalization zscore
+2023-10-19 10:53:49,262 - root - INFO - log_to_screen True
+2023-10-19 10:53:49,262 - root - INFO - save_checkpoint True
+2023-10-19 10:53:49,262 - root - INFO - enable_nhwc False
+2023-10-19 10:53:49,262 - root - INFO - optimizer_type FusedAdam
+2023-10-19 10:53:49,263 - root - INFO - crop_size_x None
+2023-10-19 10:53:49,263 - root - INFO - crop_size_y None
+2023-10-19 10:53:49,263 - root - INFO - two_step_training False
+2023-10-19 10:53:49,263 - root - INFO - plot_animations False
+2023-10-19 10:53:49,263 - root - INFO - add_noise False
+2023-10-19 10:53:49,263 - root - INFO - noise_std 0
+2023-10-19 10:53:49,263 - root - INFO - epsilon_factor 0
+2023-10-19 10:53:49,263 - root - INFO - world_size 1
+2023-10-19 10:53:49,263 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 10:53:49,263 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 10:53:49,263 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 10:53:49,263 - root - INFO - resuming False
+2023-10-19 10:53:49,263 - root - INFO - local_rank 0
+2023-10-19 10:53:49,263 - root - INFO - enable_amp True
+2023-10-19 10:53:49,263 - root - INFO - name afno_backbone_0
+2023-10-19 10:53:49,263 - root - INFO - group era5_precipafno_backbone
+2023-10-19 10:53:49,263 - root - INFO - project fourcastnet
+2023-10-19 10:53:49,263 - root - INFO - entity psi6
+2023-10-19 10:53:49,263 - root - INFO - ---------------------------------------------------
+2023-10-19 10:53:52,984 - root - INFO - rank 0, begin data loader init
+2023-10-19 10:53:52,988 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 10:53:52,989 - root - INFO - Number of samples per year: 365
+2023-10-19 10:53:52,990 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 36 x 72 x 20
+2023-10-19 10:53:52,990 - root - INFO - Delta t: 6 hours
+2023-10-19 10:53:52,990 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 10:53:52,991 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 10:53:52,992 - root - INFO - Number of samples per year: 365
+2023-10-19 10:53:52,992 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 36 x 72 x 20
+2023-10-19 10:53:52,992 - root - INFO - Delta t: 6 hours
+2023-10-19 10:53:52,993 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 10:53:52,993 - root - INFO - rank 0, data loader initialized
+2023-10-19 10:53:55,337 - root - INFO - Number of trainable model parameters: 74691840
+2023-10-19 10:53:55,337 - root - INFO - Starting Training Loop...
+2023-10-19 14:39:01,689 - root - INFO - --------------- Versions ---------------
+2023-10-19 14:39:01,927 - root - INFO - git branch: b'* master'
+2023-10-19 14:39:02,116 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 14:39:02,117 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 14:39:02,117 - root - INFO - ----------------------------------------
+2023-10-19 14:39:02,117 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 14:39:02,118 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 14:39:02,118 - root - INFO - Configuration name: afno_backbone
+2023-10-19 14:39:02,118 - root - INFO - log_to_wandb True
+2023-10-19 14:39:02,118 - root - INFO - lr 0.0005
+2023-10-19 14:39:02,119 - root - INFO - batch_size 64
+2023-10-19 14:39:02,119 - root - INFO - max_epochs 150
+2023-10-19 14:39:02,119 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 14:39:02,119 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:39:02,119 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:39:02,120 - root - INFO - orography False
+2023-10-19 14:39:02,120 - root - INFO - orography_path None
+2023-10-19 14:39:02,120 - root - INFO - exp_dir results/era5_wind
+2023-10-19 14:39:02,121 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 14:39:02,121 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 14:39:02,121 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 14:39:02,122 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 14:39:02,122 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 14:39:02,122 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 14:39:02,122 - root - INFO - loss l2
+2023-10-19 14:39:02,122 - root - INFO - num_data_workers 4
+2023-10-19 14:39:02,123 - root - INFO - dt 1
+2023-10-19 14:39:02,123 - root - INFO - n_history 0
+2023-10-19 14:39:02,123 - root - INFO - prediction_type iterative
+2023-10-19 14:39:02,123 - root - INFO - prediction_length 41
+2023-10-19 14:39:02,123 - root - INFO - n_initial_conditions 5
+2023-10-19 14:39:02,124 - root - INFO - ics_type default
+2023-10-19 14:39:02,124 - root - INFO - save_raw_forecasts True
+2023-10-19 14:39:02,124 - root - INFO - save_channel False
+2023-10-19 14:39:02,125 - root - INFO - masked_acc False
+2023-10-19 14:39:02,125 - root - INFO - maskpath None
+2023-10-19 14:39:02,125 - root - INFO - perturb False
+2023-10-19 14:39:02,126 - root - INFO - add_grid False
+2023-10-19 14:39:02,126 - root - INFO - N_grid_channels 0
+2023-10-19 14:39:02,126 - root - INFO - gridtype sinusoidal
+2023-10-19 14:39:02,126 - root - INFO - roll False
+2023-10-19 14:39:02,126 - root - INFO - num_blocks 8
+2023-10-19 14:39:02,127 - root - INFO - nettype afno
+2023-10-19 14:39:02,127 - root - INFO - patch_size 8
+2023-10-19 14:39:02,127 - root - INFO - width 56
+2023-10-19 14:39:02,127 - root - INFO - modes 32
+2023-10-19 14:39:02,127 - root - INFO - target default
+2023-10-19 14:39:02,128 - root - INFO - normalization zscore
+2023-10-19 14:39:02,128 - root - INFO - log_to_screen True
+2023-10-19 14:39:02,128 - root - INFO - save_checkpoint True
+2023-10-19 14:39:02,129 - root - INFO - enable_nhwc False
+2023-10-19 14:39:02,129 - root - INFO - optimizer_type FusedAdam
+2023-10-19 14:39:02,129 - root - INFO - crop_size_x None
+2023-10-19 14:39:02,130 - root - INFO - crop_size_y None
+2023-10-19 14:39:02,130 - root - INFO - two_step_training False
+2023-10-19 14:39:02,130 - root - INFO - plot_animations False
+2023-10-19 14:39:02,130 - root - INFO - add_noise False
+2023-10-19 14:39:02,130 - root - INFO - noise_std 0
+2023-10-19 14:39:02,131 - root - INFO - epsilon_factor 0
+2023-10-19 14:39:02,131 - root - INFO - world_size 1
+2023-10-19 14:39:02,132 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 14:39:02,132 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 14:39:02,132 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 14:39:02,133 - root - INFO - resuming False
+2023-10-19 14:39:02,133 - root - INFO - local_rank 0
+2023-10-19 14:39:02,134 - root - INFO - enable_amp True
+2023-10-19 14:39:02,134 - root - INFO - name afno_backbone_0
+2023-10-19 14:39:02,134 - root - INFO - group era5_precipafno_backbone
+2023-10-19 14:39:02,135 - root - INFO - project fourcastnet
+2023-10-19 14:39:02,135 - root - INFO - entity psi6
+2023-10-19 14:39:02,135 - root - INFO - ---------------------------------------------------
+2023-10-19 14:39:49,792 - root - INFO - rank 0, begin data loader init
+2023-10-19 14:39:49,802 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 14:39:49,804 - root - INFO - Number of samples per year: 365
+2023-10-19 14:39:49,806 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 14:39:49,808 - root - INFO - Delta t: 6 hours
+2023-10-19 14:39:49,810 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:39:49,817 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 14:39:49,820 - root - INFO - Number of samples per year: 365
+2023-10-19 14:39:49,821 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 14:39:49,822 - root - INFO - Delta t: 6 hours
+2023-10-19 14:39:49,824 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:39:49,825 - root - INFO - rank 0, data loader initialized
+2023-10-19 14:40:05,859 - root - INFO - Number of trainable model parameters: 74691840
+2023-10-19 14:40:05,866 - root - INFO - Starting Training Loop...
+2023-10-19 14:51:17,017 - root - INFO - --------------- Versions ---------------
+2023-10-19 14:51:17,021 - root - INFO - git branch: b'* master'
+2023-10-19 14:51:17,025 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 14:51:17,025 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 14:51:17,025 - root - INFO - ----------------------------------------
+2023-10-19 14:51:17,025 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 14:51:17,025 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 14:51:17,025 - root - INFO - Configuration name: afno_backbone
+2023-10-19 14:51:17,025 - root - INFO - log_to_wandb True
+2023-10-19 14:51:17,025 - root - INFO - lr 0.0005
+2023-10-19 14:51:17,026 - root - INFO - batch_size 64
+2023-10-19 14:51:17,026 - root - INFO - max_epochs 150
+2023-10-19 14:51:17,026 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 14:51:17,026 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:51:17,026 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:51:17,026 - root - INFO - orography False
+2023-10-19 14:51:17,026 - root - INFO - orography_path None
+2023-10-19 14:51:17,026 - root - INFO - exp_dir results/era5_wind
+2023-10-19 14:51:17,026 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 14:51:17,026 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 14:51:17,026 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 14:51:17,026 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 14:51:17,026 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 14:51:17,026 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 14:51:17,026 - root - INFO - loss l2
+2023-10-19 14:51:17,026 - root - INFO - num_data_workers 4
+2023-10-19 14:51:17,026 - root - INFO - dt 1
+2023-10-19 14:51:17,026 - root - INFO - n_history 0
+2023-10-19 14:51:17,027 - root - INFO - prediction_type iterative
+2023-10-19 14:51:17,027 - root - INFO - prediction_length 41
+2023-10-19 14:51:17,027 - root - INFO - n_initial_conditions 5
+2023-10-19 14:51:17,027 - root - INFO - ics_type default
+2023-10-19 14:51:17,027 - root - INFO - save_raw_forecasts True
+2023-10-19 14:51:17,027 - root - INFO - save_channel False
+2023-10-19 14:51:17,027 - root - INFO - masked_acc False
+2023-10-19 14:51:17,027 - root - INFO - maskpath None
+2023-10-19 14:51:17,027 - root - INFO - perturb False
+2023-10-19 14:51:17,027 - root - INFO - add_grid False
+2023-10-19 14:51:17,027 - root - INFO - N_grid_channels 0
+2023-10-19 14:51:17,027 - root - INFO - gridtype sinusoidal
+2023-10-19 14:51:17,027 - root - INFO - roll False
+2023-10-19 14:51:17,027 - root - INFO - num_blocks 8
+2023-10-19 14:51:17,027 - root - INFO - nettype afno
+2023-10-19 14:51:17,027 - root - INFO - patch_size 8
+2023-10-19 14:51:17,027 - root - INFO - width 56
+2023-10-19 14:51:17,027 - root - INFO - modes 32
+2023-10-19 14:51:17,027 - root - INFO - target default
+2023-10-19 14:51:17,027 - root - INFO - normalization zscore
+2023-10-19 14:51:17,027 - root - INFO - log_to_screen True
+2023-10-19 14:51:17,028 - root - INFO - save_checkpoint True
+2023-10-19 14:51:17,028 - root - INFO - enable_nhwc False
+2023-10-19 14:51:17,028 - root - INFO - optimizer_type FusedAdam
+2023-10-19 14:51:17,028 - root - INFO - crop_size_x None
+2023-10-19 14:51:17,028 - root - INFO - crop_size_y None
+2023-10-19 14:51:17,028 - root - INFO - two_step_training False
+2023-10-19 14:51:17,028 - root - INFO - plot_animations False
+2023-10-19 14:51:17,028 - root - INFO - add_noise False
+2023-10-19 14:51:17,028 - root - INFO - noise_std 0
+2023-10-19 14:51:17,028 - root - INFO - epsilon_factor 0
+2023-10-19 14:51:17,028 - root - INFO - world_size 1
+2023-10-19 14:51:17,028 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 14:51:17,028 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 14:51:17,028 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 14:51:17,028 - root - INFO - resuming False
+2023-10-19 14:51:17,028 - root - INFO - local_rank 0
+2023-10-19 14:51:17,028 - root - INFO - enable_amp True
+2023-10-19 14:51:17,028 - root - INFO - name afno_backbone_0
+2023-10-19 14:51:17,029 - root - INFO - group era5_precipafno_backbone
+2023-10-19 14:51:17,029 - root - INFO - project fourcastnet
+2023-10-19 14:51:17,029 - root - INFO - entity psi6
+2023-10-19 14:51:17,029 - root - INFO - ---------------------------------------------------
+2023-10-19 14:51:20,355 - root - INFO - rank 0, begin data loader init
+2023-10-19 14:51:20,356 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 14:51:20,357 - root - INFO - Number of samples per year: 365
+2023-10-19 14:51:20,357 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 14:51:20,357 - root - INFO - Delta t: 6 hours
+2023-10-19 14:51:20,357 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:51:20,358 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 14:51:20,358 - root - INFO - Number of samples per year: 365
+2023-10-19 14:51:20,358 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 14:51:20,358 - root - INFO - Delta t: 6 hours
+2023-10-19 14:51:20,358 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:51:20,358 - root - INFO - rank 0, data loader initialized
+2023-10-19 14:51:21,981 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-19 14:51:21,981 - root - INFO - Starting Training Loop...
+2023-10-19 14:51:56,518 - root - INFO - --------------- Versions ---------------
+2023-10-19 14:51:56,522 - root - INFO - git branch: b'* master'
+2023-10-19 14:51:56,525 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 14:51:56,526 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 14:51:56,526 - root - INFO - ----------------------------------------
+2023-10-19 14:51:56,526 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 14:51:56,526 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 14:51:56,526 - root - INFO - Configuration name: afno_backbone
+2023-10-19 14:51:56,526 - root - INFO - log_to_wandb True
+2023-10-19 14:51:56,526 - root - INFO - lr 0.0005
+2023-10-19 14:51:56,526 - root - INFO - batch_size 64
+2023-10-19 14:51:56,526 - root - INFO - max_epochs 150
+2023-10-19 14:51:56,526 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 14:51:56,526 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:51:56,526 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:51:56,526 - root - INFO - orography False
+2023-10-19 14:51:56,526 - root - INFO - orography_path None
+2023-10-19 14:51:56,526 - root - INFO - exp_dir results/era5_wind
+2023-10-19 14:51:56,527 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 14:51:56,527 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 14:51:56,527 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 14:51:56,527 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 14:51:56,527 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 14:51:56,527 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 14:51:56,527 - root - INFO - loss l2
+2023-10-19 14:51:56,527 - root - INFO - num_data_workers 4
+2023-10-19 14:51:56,527 - root - INFO - dt 1
+2023-10-19 14:51:56,527 - root - INFO - n_history 0
+2023-10-19 14:51:56,527 - root - INFO - prediction_type iterative
+2023-10-19 14:51:56,527 - root - INFO - prediction_length 41
+2023-10-19 14:51:56,527 - root - INFO - n_initial_conditions 5
+2023-10-19 14:51:56,527 - root - INFO - ics_type default
+2023-10-19 14:51:56,527 - root - INFO - save_raw_forecasts True
+2023-10-19 14:51:56,527 - root - INFO - save_channel False
+2023-10-19 14:51:56,527 - root - INFO - masked_acc False
+2023-10-19 14:51:56,527 - root - INFO - maskpath None
+2023-10-19 14:51:56,527 - root - INFO - perturb False
+2023-10-19 14:51:56,527 - root - INFO - add_grid False
+2023-10-19 14:51:56,528 - root - INFO - N_grid_channels 0
+2023-10-19 14:51:56,528 - root - INFO - gridtype sinusoidal
+2023-10-19 14:51:56,528 - root - INFO - roll False
+2023-10-19 14:51:56,528 - root - INFO - num_blocks 8
+2023-10-19 14:51:56,528 - root - INFO - nettype afno
+2023-10-19 14:51:56,528 - root - INFO - patch_size 8
+2023-10-19 14:51:56,528 - root - INFO - width 56
+2023-10-19 14:51:56,528 - root - INFO - modes 32
+2023-10-19 14:51:56,528 - root - INFO - target default
+2023-10-19 14:51:56,528 - root - INFO - normalization zscore
+2023-10-19 14:51:56,528 - root - INFO - log_to_screen True
+2023-10-19 14:51:56,528 - root - INFO - save_checkpoint True
+2023-10-19 14:51:56,528 - root - INFO - enable_nhwc False
+2023-10-19 14:51:56,528 - root - INFO - optimizer_type FusedAdam
+2023-10-19 14:51:56,528 - root - INFO - crop_size_x None
+2023-10-19 14:51:56,528 - root - INFO - crop_size_y None
+2023-10-19 14:51:56,528 - root - INFO - two_step_training False
+2023-10-19 14:51:56,528 - root - INFO - plot_animations False
+2023-10-19 14:51:56,528 - root - INFO - add_noise False
+2023-10-19 14:51:56,528 - root - INFO - noise_std 0
+2023-10-19 14:51:56,529 - root - INFO - epsilon_factor 0
+2023-10-19 14:51:56,529 - root - INFO - world_size 1
+2023-10-19 14:51:56,529 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 14:51:56,529 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 14:51:56,529 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 14:51:56,529 - root - INFO - resuming False
+2023-10-19 14:51:56,529 - root - INFO - local_rank 0
+2023-10-19 14:51:56,529 - root - INFO - enable_amp True
+2023-10-19 14:51:56,529 - root - INFO - name afno_backbone_0
+2023-10-19 14:51:56,529 - root - INFO - group era5_precipafno_backbone
+2023-10-19 14:51:56,529 - root - INFO - project fourcastnet
+2023-10-19 14:51:56,529 - root - INFO - entity psi6
+2023-10-19 14:51:56,529 - root - INFO - ---------------------------------------------------
+2023-10-19 14:51:59,816 - root - INFO - rank 0, begin data loader init
+2023-10-19 14:51:59,817 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 14:51:59,818 - root - INFO - Number of samples per year: 365
+2023-10-19 14:51:59,818 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 14:51:59,818 - root - INFO - Delta t: 6 hours
+2023-10-19 14:51:59,818 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:51:59,819 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 14:51:59,820 - root - INFO - Number of samples per year: 365
+2023-10-19 14:51:59,820 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 14:51:59,820 - root - INFO - Delta t: 6 hours
+2023-10-19 14:51:59,820 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:51:59,821 - root - INFO - rank 0, data loader initialized
+2023-10-19 14:52:01,416 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-19 14:52:01,416 - root - INFO - Starting Training Loop...
+2023-10-19 14:54:47,116 - root - INFO - --------------- Versions ---------------
+2023-10-19 14:54:47,120 - root - INFO - git branch: b'* master'
+2023-10-19 14:54:47,124 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 14:54:47,124 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 14:54:47,124 - root - INFO - ----------------------------------------
+2023-10-19 14:54:47,124 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 14:54:47,124 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 14:54:47,124 - root - INFO - Configuration name: afno_backbone
+2023-10-19 14:54:47,124 - root - INFO - log_to_wandb True
+2023-10-19 14:54:47,124 - root - INFO - lr 0.0005
+2023-10-19 14:54:47,124 - root - INFO - batch_size 64
+2023-10-19 14:54:47,124 - root - INFO - max_epochs 150
+2023-10-19 14:54:47,125 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 14:54:47,125 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:54:47,125 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 14:54:47,125 - root - INFO - orography False
+2023-10-19 14:54:47,125 - root - INFO - orography_path None
+2023-10-19 14:54:47,125 - root - INFO - exp_dir results/era5_wind
+2023-10-19 14:54:47,125 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 14:54:47,125 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 14:54:47,125 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 14:54:47,125 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 14:54:47,125 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 14:54:47,125 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 14:54:47,125 - root - INFO - loss l2
+2023-10-19 14:54:47,125 - root - INFO - num_data_workers 4
+2023-10-19 14:54:47,125 - root - INFO - dt 1
+2023-10-19 14:54:47,125 - root - INFO - n_history 0
+2023-10-19 14:54:47,125 - root - INFO - prediction_type iterative
+2023-10-19 14:54:47,126 - root - INFO - prediction_length 41
+2023-10-19 14:54:47,126 - root - INFO - n_initial_conditions 5
+2023-10-19 14:54:47,126 - root - INFO - ics_type default
+2023-10-19 14:54:47,126 - root - INFO - save_raw_forecasts True
+2023-10-19 14:54:47,126 - root - INFO - save_channel False
+2023-10-19 14:54:47,126 - root - INFO - masked_acc False
+2023-10-19 14:54:47,126 - root - INFO - maskpath None
+2023-10-19 14:54:47,126 - root - INFO - perturb False
+2023-10-19 14:54:47,126 - root - INFO - add_grid False
+2023-10-19 14:54:47,126 - root - INFO - N_grid_channels 0
+2023-10-19 14:54:47,126 - root - INFO - gridtype sinusoidal
+2023-10-19 14:54:47,126 - root - INFO - roll False
+2023-10-19 14:54:47,126 - root - INFO - num_blocks 8
+2023-10-19 14:54:47,126 - root - INFO - nettype afno
+2023-10-19 14:54:47,126 - root - INFO - patch_size 8
+2023-10-19 14:54:47,126 - root - INFO - width 56
+2023-10-19 14:54:47,126 - root - INFO - modes 32
+2023-10-19 14:54:47,126 - root - INFO - target default
+2023-10-19 14:54:47,126 - root - INFO - normalization zscore
+2023-10-19 14:54:47,126 - root - INFO - log_to_screen True
+2023-10-19 14:54:47,127 - root - INFO - save_checkpoint True
+2023-10-19 14:54:47,127 - root - INFO - enable_nhwc False
+2023-10-19 14:54:47,127 - root - INFO - optimizer_type FusedAdam
+2023-10-19 14:54:47,127 - root - INFO - crop_size_x None
+2023-10-19 14:54:47,127 - root - INFO - crop_size_y None
+2023-10-19 14:54:47,127 - root - INFO - two_step_training False
+2023-10-19 14:54:47,127 - root - INFO - plot_animations False
+2023-10-19 14:54:47,127 - root - INFO - add_noise False
+2023-10-19 14:54:47,127 - root - INFO - noise_std 0
+2023-10-19 14:54:47,127 - root - INFO - epsilon_factor 0
+2023-10-19 14:54:47,127 - root - INFO - world_size 1
+2023-10-19 14:54:47,127 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 14:54:47,127 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 14:54:47,127 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 14:54:47,127 - root - INFO - resuming False
+2023-10-19 14:54:47,127 - root - INFO - local_rank 0
+2023-10-19 14:54:47,127 - root - INFO - enable_amp True
+2023-10-19 14:54:47,127 - root - INFO - name afno_backbone_0
+2023-10-19 14:54:47,127 - root - INFO - group era5_precipafno_backbone
+2023-10-19 14:54:47,127 - root - INFO - project fourcastnet
+2023-10-19 14:54:47,127 - root - INFO - entity psi6
+2023-10-19 14:54:47,128 - root - INFO - ---------------------------------------------------
+2023-10-19 14:54:50,391 - root - INFO - rank 0, begin data loader init
+2023-10-19 14:54:50,392 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 14:54:50,393 - root - INFO - Number of samples per year: 365
+2023-10-19 14:54:50,393 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 14:54:50,393 - root - INFO - Delta t: 6 hours
+2023-10-19 14:54:50,393 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:54:50,394 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 14:54:50,394 - root - INFO - Number of samples per year: 365
+2023-10-19 14:54:50,395 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 14:54:50,395 - root - INFO - Delta t: 6 hours
+2023-10-19 14:54:50,395 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 14:54:50,395 - root - INFO - rank 0, data loader initialized
+2023-10-19 14:54:52,043 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-19 14:54:52,043 - root - INFO - Starting Training Loop...
+2023-10-19 15:14:49,186 - root - INFO - --------------- Versions ---------------
+2023-10-19 15:14:49,190 - root - INFO - git branch: b'* master'
+2023-10-19 15:14:49,194 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 15:14:49,195 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 15:14:49,195 - root - INFO - ----------------------------------------
+2023-10-19 15:14:49,195 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 15:14:49,195 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 15:14:49,195 - root - INFO - Configuration name: afno_backbone
+2023-10-19 15:14:49,195 - root - INFO - log_to_wandb True
+2023-10-19 15:14:49,195 - root - INFO - lr 0.0005
+2023-10-19 15:14:49,195 - root - INFO - batch_size 64
+2023-10-19 15:14:49,195 - root - INFO - max_epochs 150
+2023-10-19 15:14:49,195 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 15:14:49,195 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 15:14:49,195 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 15:14:49,195 - root - INFO - orography False
+2023-10-19 15:14:49,196 - root - INFO - orography_path None
+2023-10-19 15:14:49,196 - root - INFO - exp_dir results/era5_wind
+2023-10-19 15:14:49,196 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 15:14:49,196 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 15:14:49,196 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 15:14:49,196 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 15:14:49,196 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 15:14:49,196 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 15:14:49,196 - root - INFO - loss l2
+2023-10-19 15:14:49,196 - root - INFO - num_data_workers 4
+2023-10-19 15:14:49,196 - root - INFO - dt 1
+2023-10-19 15:14:49,196 - root - INFO - n_history 0
+2023-10-19 15:14:49,196 - root - INFO - prediction_type iterative
+2023-10-19 15:14:49,196 - root - INFO - prediction_length 41
+2023-10-19 15:14:49,196 - root - INFO - n_initial_conditions 5
+2023-10-19 15:14:49,196 - root - INFO - ics_type default
+2023-10-19 15:14:49,196 - root - INFO - save_raw_forecasts True
+2023-10-19 15:14:49,196 - root - INFO - save_channel False
+2023-10-19 15:14:49,196 - root - INFO - masked_acc False
+2023-10-19 15:14:49,196 - root - INFO - maskpath None
+2023-10-19 15:14:49,197 - root - INFO - perturb False
+2023-10-19 15:14:49,197 - root - INFO - add_grid False
+2023-10-19 15:14:49,197 - root - INFO - N_grid_channels 0
+2023-10-19 15:14:49,197 - root - INFO - gridtype sinusoidal
+2023-10-19 15:14:49,197 - root - INFO - roll False
+2023-10-19 15:14:49,197 - root - INFO - num_blocks 8
+2023-10-19 15:14:49,197 - root - INFO - nettype afno
+2023-10-19 15:14:49,197 - root - INFO - patch_size 8
+2023-10-19 15:14:49,197 - root - INFO - width 56
+2023-10-19 15:14:49,197 - root - INFO - modes 32
+2023-10-19 15:14:49,197 - root - INFO - target default
+2023-10-19 15:14:49,197 - root - INFO - normalization zscore
+2023-10-19 15:14:49,197 - root - INFO - log_to_screen True
+2023-10-19 15:14:49,197 - root - INFO - save_checkpoint True
+2023-10-19 15:14:49,197 - root - INFO - enable_nhwc False
+2023-10-19 15:14:49,197 - root - INFO - optimizer_type FusedAdam
+2023-10-19 15:14:49,197 - root - INFO - crop_size_x None
+2023-10-19 15:14:49,197 - root - INFO - crop_size_y None
+2023-10-19 15:14:49,197 - root - INFO - two_step_training False
+2023-10-19 15:14:49,197 - root - INFO - plot_animations False
+2023-10-19 15:14:49,197 - root - INFO - add_noise False
+2023-10-19 15:14:49,197 - root - INFO - noise_std 0
+2023-10-19 15:14:49,198 - root - INFO - epsilon_factor 0
+2023-10-19 15:14:49,198 - root - INFO - world_size 1
+2023-10-19 15:14:49,198 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 15:14:49,198 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 15:14:49,198 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 15:14:49,198 - root - INFO - resuming False
+2023-10-19 15:14:49,198 - root - INFO - local_rank 0
+2023-10-19 15:14:49,198 - root - INFO - enable_amp True
+2023-10-19 15:14:49,198 - root - INFO - name afno_backbone_0
+2023-10-19 15:14:49,198 - root - INFO - group era5_precipafno_backbone
+2023-10-19 15:14:49,198 - root - INFO - project fourcastnet
+2023-10-19 15:14:49,198 - root - INFO - entity psi6
+2023-10-19 15:14:49,198 - root - INFO - ---------------------------------------------------
+2023-10-19 15:14:52,759 - root - INFO - rank 0, begin data loader init
+2023-10-19 15:14:52,761 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 15:14:52,763 - root - INFO - Number of samples per year: 365
+2023-10-19 15:14:52,763 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 15:14:52,763 - root - INFO - Delta t: 6 hours
+2023-10-19 15:14:52,763 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 15:14:52,764 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 15:14:52,764 - root - INFO - Number of samples per year: 365
+2023-10-19 15:14:52,764 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 15:14:52,764 - root - INFO - Delta t: 6 hours
+2023-10-19 15:14:52,765 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 15:14:52,765 - root - INFO - rank 0, data loader initialized
+2023-10-19 15:14:55,144 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-19 15:14:55,144 - root - INFO - Starting Training Loop...
+2023-10-19 15:15:48,732 - root - INFO - --------------- Versions ---------------
+2023-10-19 15:15:48,737 - root - INFO - git branch: b'* master'
+2023-10-19 15:15:48,740 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-19 15:15:48,740 - root - INFO - Torch: 2.1.0+cu121
+2023-10-19 15:15:48,740 - root - INFO - ----------------------------------------
+2023-10-19 15:15:48,741 - root - INFO - ------------------ Configuration ------------------
+2023-10-19 15:15:48,741 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-19 15:15:48,741 - root - INFO - Configuration name: afno_backbone
+2023-10-19 15:15:48,741 - root - INFO - log_to_wandb True
+2023-10-19 15:15:48,741 - root - INFO - lr 0.0005
+2023-10-19 15:15:48,741 - root - INFO - batch_size 64
+2023-10-19 15:15:48,741 - root - INFO - max_epochs 150
+2023-10-19 15:15:48,741 - root - INFO - scheduler CosineAnnealingLR
+2023-10-19 15:15:48,741 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 15:15:48,741 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-19 15:15:48,741 - root - INFO - orography False
+2023-10-19 15:15:48,741 - root - INFO - orography_path None
+2023-10-19 15:15:48,741 - root - INFO - exp_dir results/era5_wind
+2023-10-19 15:15:48,741 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-19 15:15:48,741 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-19 15:15:48,741 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-19 15:15:48,742 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-19 15:15:48,742 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-19 15:15:48,742 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-19 15:15:48,742 - root - INFO - loss l2
+2023-10-19 15:15:48,742 - root - INFO - num_data_workers 4
+2023-10-19 15:15:48,742 - root - INFO - dt 1
+2023-10-19 15:15:48,742 - root - INFO - n_history 0
+2023-10-19 15:15:48,742 - root - INFO - prediction_type iterative
+2023-10-19 15:15:48,742 - root - INFO - prediction_length 41
+2023-10-19 15:15:48,742 - root - INFO - n_initial_conditions 5
+2023-10-19 15:15:48,742 - root - INFO - ics_type default
+2023-10-19 15:15:48,742 - root - INFO - save_raw_forecasts True
+2023-10-19 15:15:48,742 - root - INFO - save_channel False
+2023-10-19 15:15:48,742 - root - INFO - masked_acc False
+2023-10-19 15:15:48,742 - root - INFO - maskpath None
+2023-10-19 15:15:48,742 - root - INFO - perturb False
+2023-10-19 15:15:48,742 - root - INFO - add_grid False
+2023-10-19 15:15:48,742 - root - INFO - N_grid_channels 0
+2023-10-19 15:15:48,742 - root - INFO - gridtype sinusoidal
+2023-10-19 15:15:48,742 - root - INFO - roll False
+2023-10-19 15:15:48,743 - root - INFO - num_blocks 8
+2023-10-19 15:15:48,743 - root - INFO - nettype afno
+2023-10-19 15:15:48,743 - root - INFO - patch_size 8
+2023-10-19 15:15:48,743 - root - INFO - width 56
+2023-10-19 15:15:48,743 - root - INFO - modes 32
+2023-10-19 15:15:48,743 - root - INFO - target default
+2023-10-19 15:15:48,743 - root - INFO - normalization zscore
+2023-10-19 15:15:48,743 - root - INFO - log_to_screen True
+2023-10-19 15:15:48,743 - root - INFO - save_checkpoint True
+2023-10-19 15:15:48,743 - root - INFO - enable_nhwc False
+2023-10-19 15:15:48,743 - root - INFO - optimizer_type FusedAdam
+2023-10-19 15:15:48,743 - root - INFO - crop_size_x None
+2023-10-19 15:15:48,743 - root - INFO - crop_size_y None
+2023-10-19 15:15:48,743 - root - INFO - two_step_training False
+2023-10-19 15:15:48,743 - root - INFO - plot_animations False
+2023-10-19 15:15:48,743 - root - INFO - add_noise False
+2023-10-19 15:15:48,743 - root - INFO - noise_std 0
+2023-10-19 15:15:48,743 - root - INFO - epsilon_factor 0
+2023-10-19 15:15:48,743 - root - INFO - world_size 1
+2023-10-19 15:15:48,743 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-19 15:15:48,743 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-19 15:15:48,743 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-19 15:15:48,744 - root - INFO - resuming False
+2023-10-19 15:15:48,744 - root - INFO - local_rank 0
+2023-10-19 15:15:48,744 - root - INFO - enable_amp True
+2023-10-19 15:15:48,744 - root - INFO - name afno_backbone_0
+2023-10-19 15:15:48,744 - root - INFO - group era5_precipafno_backbone
+2023-10-19 15:15:48,744 - root - INFO - project fourcastnet
+2023-10-19 15:15:48,744 - root - INFO - entity psi6
+2023-10-19 15:15:48,744 - root - INFO - ---------------------------------------------------
+2023-10-19 15:15:52,054 - root - INFO - rank 0, begin data loader init
+2023-10-19 15:15:52,055 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-19 15:15:52,056 - root - INFO - Number of samples per year: 365
+2023-10-19 15:15:52,057 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-19 15:15:52,057 - root - INFO - Delta t: 6 hours
+2023-10-19 15:15:52,057 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 15:15:52,058 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-19 15:15:52,058 - root - INFO - Number of samples per year: 365
+2023-10-19 15:15:52,058 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-19 15:15:52,059 - root - INFO - Delta t: 6 hours
+2023-10-19 15:15:52,059 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-19 15:15:52,059 - root - INFO - rank 0, data loader initialized
+2023-10-19 15:15:53,688 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-19 15:15:53,688 - root - INFO - Starting Training Loop...
+2023-10-20 11:37:13,345 - root - INFO - --------------- Versions ---------------
+2023-10-20 11:37:13,348 - root - INFO - git branch: b'* master'
+2023-10-20 11:37:13,351 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-20 11:37:13,352 - root - INFO - Torch: 2.1.0+cu121
+2023-10-20 11:37:13,352 - root - INFO - ----------------------------------------
+2023-10-20 11:37:13,352 - root - INFO - ------------------ Configuration ------------------
+2023-10-20 11:37:13,352 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-20 11:37:13,352 - root - INFO - Configuration name: afno_backbone
+2023-10-20 11:37:13,352 - root - INFO - log_to_wandb True
+2023-10-20 11:37:13,352 - root - INFO - lr 0.0005
+2023-10-20 11:37:13,352 - root - INFO - batch_size 64
+2023-10-20 11:37:13,352 - root - INFO - max_epochs 150
+2023-10-20 11:37:13,352 - root - INFO - scheduler CosineAnnealingLR
+2023-10-20 11:37:13,352 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-20 11:37:13,353 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-20 11:37:13,353 - root - INFO - orography False
+2023-10-20 11:37:13,353 - root - INFO - orography_path None
+2023-10-20 11:37:13,353 - root - INFO - exp_dir results/era5_wind
+2023-10-20 11:37:13,353 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-20 11:37:13,353 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-20 11:37:13,353 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-20 11:37:13,353 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-20 11:37:13,353 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-20 11:37:13,353 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-20 11:37:13,353 - root - INFO - loss l2
+2023-10-20 11:37:13,353 - root - INFO - num_data_workers 4
+2023-10-20 11:37:13,353 - root - INFO - dt 1
+2023-10-20 11:37:13,353 - root - INFO - n_history 0
+2023-10-20 11:37:13,353 - root - INFO - prediction_type iterative
+2023-10-20 11:37:13,353 - root - INFO - prediction_length 41
+2023-10-20 11:37:13,353 - root - INFO - n_initial_conditions 5
+2023-10-20 11:37:13,353 - root - INFO - ics_type default
+2023-10-20 11:37:13,353 - root - INFO - save_raw_forecasts True
+2023-10-20 11:37:13,354 - root - INFO - save_channel False
+2023-10-20 11:37:13,354 - root - INFO - masked_acc False
+2023-10-20 11:37:13,354 - root - INFO - maskpath None
+2023-10-20 11:37:13,354 - root - INFO - perturb False
+2023-10-20 11:37:13,354 - root - INFO - add_grid False
+2023-10-20 11:37:13,354 - root - INFO - N_grid_channels 0
+2023-10-20 11:37:13,354 - root - INFO - gridtype sinusoidal
+2023-10-20 11:37:13,354 - root - INFO - roll False
+2023-10-20 11:37:13,354 - root - INFO - num_blocks 8
+2023-10-20 11:37:13,354 - root - INFO - nettype afno
+2023-10-20 11:37:13,354 - root - INFO - patch_size 8
+2023-10-20 11:37:13,354 - root - INFO - width 56
+2023-10-20 11:37:13,354 - root - INFO - modes 32
+2023-10-20 11:37:13,354 - root - INFO - target default
+2023-10-20 11:37:13,354 - root - INFO - normalization zscore
+2023-10-20 11:37:13,354 - root - INFO - log_to_screen True
+2023-10-20 11:37:13,354 - root - INFO - save_checkpoint True
+2023-10-20 11:37:13,354 - root - INFO - enable_nhwc False
+2023-10-20 11:37:13,354 - root - INFO - optimizer_type FusedAdam
+2023-10-20 11:37:13,354 - root - INFO - crop_size_x None
+2023-10-20 11:37:13,355 - root - INFO - crop_size_y None
+2023-10-20 11:37:13,355 - root - INFO - two_step_training False
+2023-10-20 11:37:13,355 - root - INFO - plot_animations False
+2023-10-20 11:37:13,355 - root - INFO - add_noise False
+2023-10-20 11:37:13,355 - root - INFO - noise_std 0
+2023-10-20 11:37:13,355 - root - INFO - epsilon_factor 0
+2023-10-20 11:37:13,355 - root - INFO - world_size 1
+2023-10-20 11:37:13,355 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-20 11:37:13,355 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-20 11:37:13,355 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-20 11:37:13,355 - root - INFO - resuming False
+2023-10-20 11:37:13,355 - root - INFO - local_rank 0
+2023-10-20 11:37:13,355 - root - INFO - enable_amp True
+2023-10-20 11:37:13,355 - root - INFO - name afno_backbone_0
+2023-10-20 11:37:13,355 - root - INFO - group era5_precipafno_backbone
+2023-10-20 11:37:13,355 - root - INFO - project fourcastnet
+2023-10-20 11:37:13,355 - root - INFO - entity psi6
+2023-10-20 11:37:13,355 - root - INFO - ---------------------------------------------------
+2023-10-20 11:37:16,718 - root - INFO - rank 0, begin data loader init
+2023-10-20 11:37:16,720 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-20 11:37:16,720 - root - INFO - Number of samples per year: 365
+2023-10-20 11:37:16,720 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-20 11:37:16,720 - root - INFO - Delta t: 6 hours
+2023-10-20 11:37:16,720 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-20 11:37:16,721 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-20 11:37:16,722 - root - INFO - Number of samples per year: 365
+2023-10-20 11:37:16,722 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-20 11:37:16,722 - root - INFO - Delta t: 6 hours
+2023-10-20 11:37:16,722 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-20 11:37:16,722 - root - INFO - rank 0, data loader initialized
+2023-10-20 11:37:18,392 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-20 11:37:18,392 - root - INFO - Starting Training Loop...
+2023-10-20 11:39:45,538 - root - INFO - --------------- Versions ---------------
+2023-10-20 11:39:45,540 - root - INFO - git branch: b'* master'
+2023-10-20 11:39:45,554 - root - INFO - git hash: b'93360c1720a9f97aabf970689f21c9fad8737788'
+2023-10-20 11:39:45,554 - root - INFO - Torch: 2.1.0+cu121
+2023-10-20 11:39:45,555 - root - INFO - ----------------------------------------
+2023-10-20 11:39:45,555 - root - INFO - ------------------ Configuration ------------------
+2023-10-20 11:39:45,555 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-10-20 11:39:45,555 - root - INFO - Configuration name: afno_backbone
+2023-10-20 11:39:45,555 - root - INFO - log_to_wandb True
+2023-10-20 11:39:45,555 - root - INFO - lr 0.0005
+2023-10-20 11:39:45,555 - root - INFO - batch_size 64
+2023-10-20 11:39:45,555 - root - INFO - max_epochs 150
+2023-10-20 11:39:45,555 - root - INFO - scheduler CosineAnnealingLR
+2023-10-20 11:39:45,555 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-20 11:39:45,555 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-10-20 11:39:45,555 - root - INFO - orography False
+2023-10-20 11:39:45,555 - root - INFO - orography_path None
+2023-10-20 11:39:45,556 - root - INFO - exp_dir results/era5_wind
+2023-10-20 11:39:45,556 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-10-20 11:39:45,556 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-10-20 11:39:45,556 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-10-20 11:39:45,556 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-10-20 11:39:45,556 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-10-20 11:39:45,556 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-10-20 11:39:45,556 - root - INFO - loss l2
+2023-10-20 11:39:45,556 - root - INFO - num_data_workers 4
+2023-10-20 11:39:45,556 - root - INFO - dt 1
+2023-10-20 11:39:45,556 - root - INFO - n_history 0
+2023-10-20 11:39:45,556 - root - INFO - prediction_type iterative
+2023-10-20 11:39:45,556 - root - INFO - prediction_length 41
+2023-10-20 11:39:45,556 - root - INFO - n_initial_conditions 5
+2023-10-20 11:39:45,556 - root - INFO - ics_type default
+2023-10-20 11:39:45,556 - root - INFO - save_raw_forecasts True
+2023-10-20 11:39:45,556 - root - INFO - save_channel False
+2023-10-20 11:39:45,556 - root - INFO - masked_acc False
+2023-10-20 11:39:45,557 - root - INFO - maskpath None
+2023-10-20 11:39:45,557 - root - INFO - perturb False
+2023-10-20 11:39:45,557 - root - INFO - add_grid False
+2023-10-20 11:39:45,557 - root - INFO - N_grid_channels 0
+2023-10-20 11:39:45,557 - root - INFO - gridtype sinusoidal
+2023-10-20 11:39:45,557 - root - INFO - roll False
+2023-10-20 11:39:45,557 - root - INFO - num_blocks 8
+2023-10-20 11:39:45,557 - root - INFO - nettype afno
+2023-10-20 11:39:45,557 - root - INFO - patch_size 8
+2023-10-20 11:39:45,557 - root - INFO - width 56
+2023-10-20 11:39:45,557 - root - INFO - modes 32
+2023-10-20 11:39:45,557 - root - INFO - target default
+2023-10-20 11:39:45,557 - root - INFO - normalization zscore
+2023-10-20 11:39:45,557 - root - INFO - log_to_screen True
+2023-10-20 11:39:45,557 - root - INFO - save_checkpoint True
+2023-10-20 11:39:45,557 - root - INFO - enable_nhwc False
+2023-10-20 11:39:45,557 - root - INFO - optimizer_type FusedAdam
+2023-10-20 11:39:45,557 - root - INFO - crop_size_x None
+2023-10-20 11:39:45,557 - root - INFO - crop_size_y None
+2023-10-20 11:39:45,557 - root - INFO - two_step_training False
+2023-10-20 11:39:45,557 - root - INFO - plot_animations False
+2023-10-20 11:39:45,558 - root - INFO - add_noise False
+2023-10-20 11:39:45,558 - root - INFO - noise_std 0
+2023-10-20 11:39:45,558 - root - INFO - epsilon_factor 0
+2023-10-20 11:39:45,558 - root - INFO - world_size 1
+2023-10-20 11:39:45,558 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/0
+2023-10-20 11:39:45,558 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/ckpt.tar
+2023-10-20 11:39:45,558 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+2023-10-20 11:39:45,558 - root - INFO - resuming False
+2023-10-20 11:39:45,558 - root - INFO - local_rank 0
+2023-10-20 11:39:45,558 - root - INFO - enable_amp True
+2023-10-20 11:39:45,558 - root - INFO - name afno_backbone_0
+2023-10-20 11:39:45,558 - root - INFO - group era5_precipafno_backbone
+2023-10-20 11:39:45,558 - root - INFO - project fourcastnet
+2023-10-20 11:39:45,558 - root - INFO - entity psi6
+2023-10-20 11:39:45,558 - root - INFO - ---------------------------------------------------
+2023-10-20 11:39:48,896 - root - INFO - rank 0, begin data loader init
+2023-10-20 11:39:48,898 - root - INFO - Getting file stats from ERA5_data_formatted/train/2007.h5
+2023-10-20 11:39:48,899 - root - INFO - Number of samples per year: 365
+2023-10-20 11:39:48,899 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 3285. Image Shape: 72 x 144 x 20
+2023-10-20 11:39:48,899 - root - INFO - Delta t: 6 hours
+2023-10-20 11:39:48,899 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-20 11:39:48,900 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-10-20 11:39:48,900 - root - INFO - Number of samples per year: 365
+2023-10-20 11:39:48,900 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-10-20 11:39:48,900 - root - INFO - Delta t: 6 hours
+2023-10-20 11:39:48,900 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-10-20 11:39:48,901 - root - INFO - rank 0, data loader initialized
+2023-10-20 11:39:50,616 - root - INFO - Number of trainable model parameters: 62374656
+2023-10-20 11:39:50,616 - root - INFO - Starting Training Loop...
+2023-10-20 11:40:06,427 - root - INFO - Time taken for epoch 1 is 15.811145544052124 sec
+2023-10-20 11:40:06,428 - root - INFO - Train loss: 0.8360810279846191. Valid loss: 0.8398176431655884
+2023-10-20 11:40:24,932 - root - INFO - Time taken for epoch 2 is 18.50458574295044 sec
+2023-10-20 11:40:24,934 - root - INFO - Train loss: 0.7768878936767578. Valid loss: 0.7725759744644165

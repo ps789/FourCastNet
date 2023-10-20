@@ -56,11 +56,13 @@ from netCDF4 import Dataset as DS
 import os
 
 def writetofile(src, dest, channel_idx, varslist, src_idx=0, frmt='nc'):
+    if not os.path.isfile(src):
+        print("not a path")
     if os.path.isfile(src):
-        batch = 2**4
+        batch = 5
         rank = MPI.COMM_WORLD.rank
         Nproc = MPI.COMM_WORLD.size
-        Nimgtot = 52#src_shape[0]
+        Nimgtot = 365#src_shape[0]
 
         Nimg = Nimgtot//Nproc
         base = rank*Nimg
@@ -73,7 +75,6 @@ def writetofile(src, dest, channel_idx, varslist, src_idx=0, frmt='nc'):
                 fsrc = DS(src, 'r', format="NETCDF4").variables[variable_name]
             elif frmt == 'h5':
                 fsrc = h5py.File(src, 'r')[varslist[0]]
-            print("fsrc shape", fsrc.shape)
             fdest = h5py.File(dest, 'a', driver='mpio', comm=MPI.COMM_WORLD)
 
             start = time.time()
@@ -85,6 +86,7 @@ def writetofile(src, dest, channel_idx, varslist, src_idx=0, frmt='nc'):
                         ims = fsrc[idx:end]
                     print(ims.shape)
                     fdest['fields'][idx:end, channel_idx, :, :] = ims
+                    print(channel_idx)
                     break
                 else:
                     if len(fsrc.shape) == 4:
@@ -92,7 +94,6 @@ def writetofile(src, dest, channel_idx, varslist, src_idx=0, frmt='nc'):
                     else:
                         ims = fsrc[idx:idx+batch]
                     #ims = fsrc[idx:idx+batch]
-                    print("ims shape", ims.shape)
                     fdest['fields'][idx:idx+batch, channel_idx, :, :] = ims
                     idx+=batch
                     ttot = time.time() - start
@@ -106,64 +107,73 @@ def writetofile(src, dest, channel_idx, varslist, src_idx=0, frmt='nc'):
             mins = (ttot - 3600*hrs)//60
             secs = (ttot - 3600*hrs - 60*mins)
             channel_idx += 1 
-filestr = 'oct_2021_19_31'
-dest = '/global/cscratch1/sd/jpathak/21var/oct_2021_19_21.h5'
+dir_dict = {}
+for year in np.arange(2007, 2016):
+    dir_dict[year] = 'train'
 
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_sfc.nc'
-#u10 v10 t2m
-writetofile(src, dest, 0, ['u10'])
-writetofile(src, dest, 1, ['v10'])
-writetofile(src, dest, 2, ['t2m'])
+for year in np.arange(2016, 2017):
+    dir_dict[year] = 'test'
 
-#sp mslp
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_sfc.nc'
-writetofile(src, dest, 3, ['sp'])
-writetofile(src, dest, 4, ['msl'])
+for year in np.arange(2017, 2018):
+    dir_dict[year] = 'out_of_sample'
 
-#t850
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 5, ['t'], 2)
 
-#uvz1000
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 6, ['u'], 3)
-writetofile(src, dest, 7, ['v'], 3)
-writetofile(src, dest, 8, ['z'], 3)
+print(dir_dict)
 
-#uvz850
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 9, ['u'], 2)
-writetofile(src, dest, 10, ['v'], 2)
-writetofile(src, dest, 11, ['z'], 2)
+years = np.arange(2007, 2018)
 
-#uvz 500
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 12, ['u'], 1)
-writetofile(src, dest, 13, ['v'], 1)
-writetofile(src, dest, 14, ['z'], 1)
+for year in years:
 
-#t500
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 15, ['t'], 1)
+    dest = f'../ERA5_data_formatted/{dir_dict[year]}/{year}.h5'
+    with h5py.File(dest, 'w') as f:
+        f.create_dataset('fields', shape = (365, 20, 73, 144), dtype='f')
+    src = f'../ERA5_data/data_sfc_{year}.nc'
+    #u10 v10 t2m
+    writetofile(src, dest, 0, ['u10'])
+    writetofile(src, dest, 1, ['v10'])
+    writetofile(src, dest, 2, ['t2m'])
 
-#z50
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 16, ['z'], 0)
+    #sp mslp
+    writetofile(src, dest, 3, ['sp'])
+    writetofile(src, dest, 4, ['msl'])
 
-#r500 
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 17, ['r'], 1)
+    #t850
+    src = f'../ERA5_data/data_pl_{year}.nc'
+    writetofile(src, dest, 5, ['t'], 30)
 
-#r850
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_pl.nc'
-writetofile(src, dest, 18, ['r'], 2)
+    #uvz1000
+    writetofile(src, dest, 6, ['u'], 36)
+    writetofile(src, dest, 7, ['v'], 36)
+    writetofile(src, dest, 8, ['z'], 36)
 
-#tcwv
-src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_sfc.nc'
-writetofile(src, dest, 19, ['tcwv'])
+    #uvz850
+    writetofile(src, dest, 9, ['u'], 30)
+    writetofile(src, dest, 10, ['v'], 30)
+    writetofile(src, dest, 11, ['z'], 30)
 
-#sst
-#src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_sfc.nc'
-#writetofile(src, dest, 20, ['sst'])
+    #uvz 500
+    writetofile(src, dest, 12, ['u'], 21)
+    writetofile(src, dest, 13, ['v'], 21)
+    writetofile(src, dest, 14, ['z'], 21)
+
+    #t500
+    writetofile(src, dest, 15, ['t'], 21)
+
+    #z50
+    writetofile(src, dest, 16, ['z'], 8)
+
+    #r500 
+    writetofile(src, dest, 17, ['r'], 21)
+
+    #r850
+    writetofile(src, dest, 18, ['r'], 30)
+    
+    src = f'../ERA5_data/data_sfc_{year}.nc'
+    #tcwv
+    writetofile(src, dest, 19, ['tcwv'])
+
+    #sst
+    #src = '/project/projectdirs/dasrepo/ERA5/oct_2021_19_31_sfc.nc'
+    #writetofile(src, dest, 20, ['sst'])
 
 

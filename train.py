@@ -544,8 +544,8 @@ if __name__ == '__main__':
   params['epsilon_factor'] = args.epsilon_factor
 
   params['world_size'] = 1
-  if 'WORLD_SIZE' in os.environ:
-    params['world_size'] = int(os.environ['WORLD_SIZE'])
+  #if 'WORLD_SIZE' in os.environ:
+  #  params['world_size'] = int(os.environ['WORLD_SIZE'])
 
   world_rank = 0
   local_rank = 0
@@ -584,8 +584,8 @@ if __name__ == '__main__':
 #  params['group'] = "era5_wind" + args.config
   params['name'] = args.config + '_' + str(args.run_num)
   params['group'] = "era5_precip" + args.config
-  params['project'] = "ERA5_precip"
-  params['entity'] = "flowgan"
+  params['project'] = "fourcastnet"
+  params['entity'] = "psi6"
   if world_rank==0:
     logging_utils.log_to_file(logger_name=None, log_filename=os.path.join(expDir, 'out.log'))
     logging_utils.log_versions()

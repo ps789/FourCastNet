@@ -97,19 +97,19 @@ def writetofile(src, dest, channel_idx, varslist):
 #year_dict = {'j': np.arange(1979, 1993), 'k': np.arange(1993, 2006), 'a' : np.arange(2006, 2021)}
 
 dir_dict = {}
-for year in np.arange(1979, 1993):
+for year in np.arange(2007, 2016):
     dir_dict[year] = 'j'
 
-for year in np.arange(1993, 2006):
+for year in np.arange(2016, 2017):
     dir_dict[year] = 'k'
 
-for year in np.arange(2006, 2021):
+for year in np.arange(2017, 2018):
     dir_dict[year] = 'a'
 
 
 print(dir_dict)
 
-years = np.arange(1979, 2018)
+years = np.arange(2007, 2018)
     
 for year in years:
 
