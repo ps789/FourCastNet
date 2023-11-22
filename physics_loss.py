@@ -66,3 +66,36 @@ class PhysicsLoss(LpLoss):
 
     def __call__(self, x, y):
         return self.rel(x, y)
+
+
+def MassLoss(model, loss_weight, loss_func, x, y, p, t):
+    '''
+    residual = u_x + v_y + w_p: (N,1)
+    '''
+    u, v, w = model(torch.cat([x, y, p, t], dim=1))
+    u_x = torch.autograd.grad(outputs=[u.sum()], inputs=[x], create_graph=True)
+    v_y = torch.autograd.grad(outputs=[v.sum()], inputs=[y], create_graph=True)
+    w_p = torch.autograd.grad(outputs=[w.sum()], inputs=[p], create_graph=True)
+    residual = u_x + v_y + w_p
+    loss = loss_weight * loss_func(residual)
+    return loss
+
+
+def MomentumLoss(model, loss_weight, loss_func, x, y, p, t, f):
+    '''
+    residual_1 = Dt(u) - fv + phi_x: (N,1)
+    residual_2 = Dt(v) + fu + phi_y: (N,1)
+    '''
+    u, v, w, phi = model(torch.cat([x, y, p, t], dim=1))
+    u_x, u_y, u_p, u_t = torch.autograd.grad(outputs=[u.sum()], inputs=[x,y,p,t], create_graph=True)
+    v_x, v_y, v_p, v_t = torch.autograd.grad(outputs=[v.sum()], inputs=[x,y,p,t], create_graph=True)
+    w_x, w_y, w_p, w_t = torch.autograd.grad(outputs=[w.sum()], inputs=[x,y,p,t], create_graph=True)
+    phi_x, phi_y = torch.autograd.grad(outputs=[phi.sum()], inputs=[x,y], create_graph=True)
+
+    residual_1 = u_t + u*u_x + v*u_y + w*u_p - f * v + phi_x 
+    residual_2 = v_t + u*v_x + v*v_y + w*v_p - f * u + phi_y
+
+    loss_1 = loss_weight[0] * loss_func(residual_1)
+    loss_2 = loss_weight[1] * loss_func(residual_2)
+
+    return loss_1 + loss_2
