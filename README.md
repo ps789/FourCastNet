@@ -1,3 +1,10 @@
+# CliML
+
+This is the repository for our project proposal for Scientific Machine Learning at Georgia Tech. Most of our changes can be found in physics_loss.py.
+
+The original ReadMe for FourCastNet follows.
+
+
 # FourCastNet
 
 ![nvidia](assets/nvidia.png) ![nersc](assets/nersc.png)
