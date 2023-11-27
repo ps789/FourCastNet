@@ -8,6 +8,6 @@ do
 		let next_index=$next_index+1
 	fi
 	echo $next_index
-	ncks -d time,$(($index)),$(($next_index-1)) ../ERA5_data/data_sfc.nc -O ../ERA5_data/data_sfc_$year.nc
+	ncks -d time,$(($index)),$(($next_index-1)) ../ERA5_data/data_constant_mask.nc -O ../ERA5_data/data_constant_mask_$year.nc
 done
 

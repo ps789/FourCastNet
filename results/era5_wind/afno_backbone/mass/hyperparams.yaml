@@ -1,10 +1,7 @@
-lr: '0.0001'
-batch_size: '64'
 log_to_wandb: 'True'
-max_epochs: '50'
-pretrained: 'True'
-two_step_training: 'True'
-pretrained_ckpt_path: results/era5_wind/afno_backbone/0/training_checkpoints/best_ckpt.tar
+lr: '0.0005'
+batch_size: '64'
+max_epochs: '150'
 scheduler: CosineAnnealingLR
 in_channels: '[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]'
 out_channels: '[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]'
@@ -14,9 +11,9 @@ exp_dir: results/era5_wind
 train_data_path: ERA5_data_formatted/train
 valid_data_path: ERA5_data_formatted/test
 inf_data_path: ERA5_data_formatted/out_of_sample
-time_means_path: results/time_means.npy
-global_means_path: results/global_means.npy
-global_stds_path: results/global_stds.npy
+time_means_path: ERA5_data_formatted/time_means.npy
+global_means_path: ERA5_data_formatted/global_means.npy
+global_stds_path: ERA5_data_formatted/global_stds.npy
 loss: l2
 num_data_workers: '4'
 dt: '1'
@@ -47,20 +44,21 @@ enable_nhwc: 'False'
 optimizer_type: FusedAdam
 crop_size_x: None
 crop_size_y: None
+two_step_training: 'False'
 plot_animations: 'False'
 add_noise: 'False'
 noise_std: '0'
 epsilon_factor: '0'
 world_size: '1'
-experiment_dir: /work2/phillip/FourCastNet/results/era5_wind/afno_backbone_finetune/0
-checkpoint_path: results/era5_wind/afno_backbone_finetune/0/training_checkpoints/ckpt.tar
-best_checkpoint_path: results/era5_wind/afno_backbone_finetune/0/training_checkpoints/best_ckpt.tar
+experiment_dir: /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/mass
+checkpoint_path: results/era5_wind/afno_backbone/mass/training_checkpoints/ckpt.tar
+best_checkpoint_path: results/era5_wind/afno_backbone/mass/training_checkpoints/best_ckpt.tar
 resuming: 'False'
 local_rank: '0'
 enable_amp: 'True'
-name: afno_backbone_finetune_0
-group: era5_precipafno_backbone_finetune
-project: ERA5_precip
-entity: flowgan
-N_in_channels: '20'
+name: afno_backbone_mass
+group: era5_precipafno_backbone
+project: fourcastnet
+entity: psi6
+N_in_channels: '22'
 N_out_channels: '20'

@@ -1,0 +1,471 @@
+2023-11-20 13:24:28,154 - root - INFO - --------------- Versions ---------------
+2023-11-20 13:24:28,158 - root - INFO - git branch: b'* master'
+2023-11-20 13:24:28,162 - root - INFO - git hash: b'114a19dda35f518cc818460ae8c0c168473a5fc4'
+2023-11-20 13:24:28,163 - root - INFO - Torch: 2.1.0+cu121
+2023-11-20 13:24:28,163 - root - INFO - ----------------------------------------
+2023-11-20 13:24:28,163 - root - INFO - ------------------ Configuration ------------------
+2023-11-20 13:24:28,163 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-11-20 13:24:28,163 - root - INFO - Configuration name: afno_backbone
+2023-11-20 13:24:28,163 - root - INFO - log_to_wandb True
+2023-11-20 13:24:28,163 - root - INFO - lr 0.0005
+2023-11-20 13:24:28,163 - root - INFO - batch_size 64
+2023-11-20 13:24:28,163 - root - INFO - max_epochs 150
+2023-11-20 13:24:28,163 - root - INFO - scheduler CosineAnnealingLR
+2023-11-20 13:24:28,163 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-11-20 13:24:28,163 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-11-20 13:24:28,164 - root - INFO - orography False
+2023-11-20 13:24:28,164 - root - INFO - orography_path None
+2023-11-20 13:24:28,164 - root - INFO - exp_dir results/era5_wind
+2023-11-20 13:24:28,164 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-11-20 13:24:28,164 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-11-20 13:24:28,164 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-11-20 13:24:28,164 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-11-20 13:24:28,164 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-11-20 13:24:28,164 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-11-20 13:24:28,164 - root - INFO - loss l2
+2023-11-20 13:24:28,164 - root - INFO - num_data_workers 4
+2023-11-20 13:24:28,164 - root - INFO - dt 1
+2023-11-20 13:24:28,164 - root - INFO - n_history 0
+2023-11-20 13:24:28,165 - root - INFO - prediction_type iterative
+2023-11-20 13:24:28,165 - root - INFO - prediction_length 41
+2023-11-20 13:24:28,165 - root - INFO - n_initial_conditions 5
+2023-11-20 13:24:28,165 - root - INFO - ics_type default
+2023-11-20 13:24:28,165 - root - INFO - save_raw_forecasts True
+2023-11-20 13:24:28,165 - root - INFO - save_channel False
+2023-11-20 13:24:28,165 - root - INFO - masked_acc False
+2023-11-20 13:24:28,165 - root - INFO - maskpath None
+2023-11-20 13:24:28,165 - root - INFO - perturb False
+2023-11-20 13:24:28,165 - root - INFO - add_grid False
+2023-11-20 13:24:28,165 - root - INFO - N_grid_channels 0
+2023-11-20 13:24:28,165 - root - INFO - gridtype sinusoidal
+2023-11-20 13:24:28,165 - root - INFO - roll False
+2023-11-20 13:24:28,165 - root - INFO - num_blocks 8
+2023-11-20 13:24:28,165 - root - INFO - nettype afno
+2023-11-20 13:24:28,166 - root - INFO - patch_size 8
+2023-11-20 13:24:28,166 - root - INFO - width 56
+2023-11-20 13:24:28,166 - root - INFO - modes 32
+2023-11-20 13:24:28,166 - root - INFO - target default
+2023-11-20 13:24:28,166 - root - INFO - normalization zscore
+2023-11-20 13:24:28,166 - root - INFO - log_to_screen True
+2023-11-20 13:24:28,166 - root - INFO - save_checkpoint True
+2023-11-20 13:24:28,166 - root - INFO - enable_nhwc False
+2023-11-20 13:24:28,166 - root - INFO - optimizer_type FusedAdam
+2023-11-20 13:24:28,166 - root - INFO - crop_size_x None
+2023-11-20 13:24:28,166 - root - INFO - crop_size_y None
+2023-11-20 13:24:28,166 - root - INFO - two_step_training False
+2023-11-20 13:24:28,166 - root - INFO - plot_animations False
+2023-11-20 13:24:28,166 - root - INFO - add_noise False
+2023-11-20 13:24:28,166 - root - INFO - noise_std 0
+2023-11-20 13:24:28,166 - root - INFO - epsilon_factor 0
+2023-11-20 13:24:28,166 - root - INFO - world_size 1
+2023-11-20 13:24:28,166 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/half
+2023-11-20 13:24:28,166 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/half/training_checkpoints/ckpt.tar
+2023-11-20 13:24:28,167 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/half/training_checkpoints/best_ckpt.tar
+2023-11-20 13:24:28,167 - root - INFO - resuming False
+2023-11-20 13:24:28,167 - root - INFO - local_rank 0
+2023-11-20 13:24:28,167 - root - INFO - enable_amp True
+2023-11-20 13:24:28,167 - root - INFO - name afno_backbone_half
+2023-11-20 13:24:28,167 - root - INFO - group era5_precipafno_backbone
+2023-11-20 13:24:28,167 - root - INFO - project fourcastnet
+2023-11-20 13:24:28,167 - root - INFO - entity psi6
+2023-11-20 13:24:28,167 - root - INFO - ---------------------------------------------------
+2023-11-20 13:24:32,085 - root - INFO - rank 0, begin data loader init
+2023-11-20 13:24:32,086 - root - INFO - Getting file stats from ERA5_data_formatted/train/2012.h5
+2023-11-20 13:24:32,088 - root - INFO - Number of samples per year: 365
+2023-11-20 13:24:32,088 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 1460. Image Shape: 72 x 144 x 20
+2023-11-20 13:24:32,088 - root - INFO - Delta t: 6 hours
+2023-11-20 13:24:32,088 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-11-20 13:24:32,089 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-11-20 13:24:32,089 - root - INFO - Number of samples per year: 365
+2023-11-20 13:24:32,089 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-11-20 13:24:32,089 - root - INFO - Delta t: 6 hours
+2023-11-20 13:24:32,090 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-11-20 13:24:32,090 - root - INFO - rank 0, data loader initialized
+2023-11-20 13:24:33,859 - root - INFO - Number of trainable model parameters: 62374656
+2023-11-20 13:24:33,859 - root - INFO - Starting Training Loop...
+2023-11-20 13:24:44,051 - root - INFO - Time taken for epoch 1 is 10.191752433776855 sec
+2023-11-20 13:24:44,051 - root - INFO - Train loss: 1.145557165145874. Valid loss: 1.1372506618499756
+2023-11-20 13:25:02,276 - root - INFO - Time taken for epoch 2 is 18.224629640579224 sec
+2023-11-20 13:25:02,278 - root - INFO - Train loss: 0.8614954352378845. Valid loss: 0.8470783233642578
+2023-11-20 13:25:16,864 - root - INFO - Time taken for epoch 3 is 14.58594036102295 sec
+2023-11-20 13:25:16,866 - root - INFO - Train loss: 0.7974278926849365. Valid loss: 0.7950047850608826
+2023-11-20 13:25:31,649 - root - INFO - Time taken for epoch 4 is 14.783368110656738 sec
+2023-11-20 13:25:31,650 - root - INFO - Train loss: 0.768470823764801. Valid loss: 0.7581494450569153
+2023-11-20 13:25:46,083 - root - INFO - Time taken for epoch 5 is 14.432187795639038 sec
+2023-11-20 13:25:46,084 - root - INFO - Train loss: 0.7589296102523804. Valid loss: 0.7408230304718018
+2023-11-20 13:26:00,496 - root - INFO - Time taken for epoch 6 is 14.412215232849121 sec
+2023-11-20 13:26:00,498 - root - INFO - Train loss: 0.7159328460693359. Valid loss: 0.7093321084976196
+2023-11-20 13:26:14,984 - root - INFO - Time taken for epoch 7 is 14.48606014251709 sec
+2023-11-20 13:26:14,985 - root - INFO - Train loss: 0.712196946144104. Valid loss: 0.7041007280349731
+2023-11-20 13:26:29,691 - root - INFO - Time taken for epoch 8 is 14.705398797988892 sec
+2023-11-20 13:26:29,692 - root - INFO - Train loss: 0.6979869604110718. Valid loss: 0.6883673071861267
+2023-11-20 13:26:44,221 - root - INFO - Time taken for epoch 9 is 14.528614282608032 sec
+2023-11-20 13:26:44,222 - root - INFO - Train loss: 0.6913540363311768. Valid loss: 0.6829376220703125
+2023-11-20 13:26:58,602 - root - INFO - Time taken for epoch 10 is 14.380242824554443 sec
+2023-11-20 13:26:58,603 - root - INFO - Train loss: 0.6859048008918762. Valid loss: 0.6711467504501343
+2023-11-20 13:27:08,793 - root - INFO - Time taken for epoch 11 is 10.189285278320312 sec
+2023-11-20 13:27:08,794 - root - INFO - Train loss: 0.7015925645828247. Valid loss: 0.6853600740432739
+2023-11-20 13:27:18,902 - root - INFO - Time taken for epoch 12 is 10.107583999633789 sec
+2023-11-20 13:27:18,903 - root - INFO - Train loss: 0.6847608089447021. Valid loss: 0.681699812412262
+2023-11-20 13:27:33,219 - root - INFO - Time taken for epoch 13 is 14.315006494522095 sec
+2023-11-20 13:27:33,220 - root - INFO - Train loss: 0.6736629009246826. Valid loss: 0.6609537601470947
+2023-11-20 13:27:47,647 - root - INFO - Time taken for epoch 14 is 14.426207542419434 sec
+2023-11-20 13:27:47,648 - root - INFO - Train loss: 0.6604927778244019. Valid loss: 0.6471565365791321
+2023-11-20 13:27:57,775 - root - INFO - Time taken for epoch 15 is 10.127180576324463 sec
+2023-11-20 13:27:57,776 - root - INFO - Train loss: 0.6571078300476074. Valid loss: 0.6526950597763062
+2023-11-20 13:28:12,103 - root - INFO - Time taken for epoch 16 is 14.326634407043457 sec
+2023-11-20 13:28:12,105 - root - INFO - Train loss: 0.641535222530365. Valid loss: 0.6445986032485962
+2023-11-20 13:28:26,626 - root - INFO - Time taken for epoch 17 is 14.520638227462769 sec
+2023-11-20 13:28:26,627 - root - INFO - Train loss: 0.6334730386734009. Valid loss: 0.6247407793998718
+2023-11-20 13:28:40,916 - root - INFO - Time taken for epoch 18 is 14.289139747619629 sec
+2023-11-20 13:28:40,918 - root - INFO - Train loss: 0.6346064805984497. Valid loss: 0.6244829297065735
+2023-11-20 13:28:51,123 - root - INFO - Time taken for epoch 19 is 10.204971075057983 sec
+2023-11-20 13:28:51,124 - root - INFO - Train loss: 0.6315218210220337. Valid loss: 0.6258347630500793
+2023-11-20 13:29:05,472 - root - INFO - Time taken for epoch 20 is 14.347428798675537 sec
+2023-11-20 13:29:05,473 - root - INFO - Train loss: 0.6219776272773743. Valid loss: 0.6129295229911804
+2023-11-20 13:29:15,588 - root - INFO - Time taken for epoch 21 is 10.114856243133545 sec
+2023-11-20 13:29:15,589 - root - INFO - Train loss: 0.6246877908706665. Valid loss: 0.6137482523918152
+2023-11-20 13:29:25,770 - root - INFO - Time taken for epoch 22 is 10.180015802383423 sec
+2023-11-20 13:29:25,771 - root - INFO - Train loss: 0.6333082914352417. Valid loss: 0.6229091882705688
+2023-11-20 13:29:33,118 - root - INFO - Time taken for epoch 23 is 7.347098112106323 sec
+2023-11-20 13:29:33,119 - root - INFO - Train loss: 0.6228821873664856. Valid loss: 0.6174627542495728
+2023-11-20 13:29:47,592 - root - INFO - Time taken for epoch 24 is 14.472226858139038 sec
+2023-11-20 13:29:47,593 - root - INFO - Train loss: 0.624707818031311. Valid loss: 0.6125020980834961
+2023-11-20 13:30:02,128 - root - INFO - Time taken for epoch 25 is 14.534934282302856 sec
+2023-11-20 13:30:02,129 - root - INFO - Train loss: 0.6150070428848267. Valid loss: 0.6081397533416748
+2023-11-20 13:30:16,786 - root - INFO - Time taken for epoch 26 is 14.65638542175293 sec
+2023-11-20 13:30:16,787 - root - INFO - Train loss: 0.6096599698066711. Valid loss: 0.6023666262626648
+2023-11-20 13:30:27,341 - root - INFO - Time taken for epoch 27 is 10.553300619125366 sec
+2023-11-20 13:30:27,342 - root - INFO - Train loss: 0.6060869097709656. Valid loss: 0.6037925481796265
+2023-11-20 13:30:41,759 - root - INFO - Time taken for epoch 28 is 14.416110277175903 sec
+2023-11-20 13:30:41,760 - root - INFO - Train loss: 0.6040884256362915. Valid loss: 0.6007665395736694
+2023-11-20 13:30:56,324 - root - INFO - Time taken for epoch 29 is 14.563448905944824 sec
+2023-11-20 13:30:56,325 - root - INFO - Train loss: 0.6028115749359131. Valid loss: 0.5948749780654907
+2023-11-20 13:31:06,584 - root - INFO - Time taken for epoch 30 is 10.258687019348145 sec
+2023-11-20 13:31:06,586 - root - INFO - Train loss: 0.606140673160553. Valid loss: 0.5957704782485962
+2023-11-20 13:31:16,936 - root - INFO - Time taken for epoch 31 is 10.350239276885986 sec
+2023-11-20 13:31:16,937 - root - INFO - Train loss: 0.6101415157318115. Valid loss: 0.6035687327384949
+2023-11-20 13:31:27,221 - root - INFO - Time taken for epoch 32 is 10.283149242401123 sec
+2023-11-20 13:31:27,222 - root - INFO - Train loss: 0.6053903102874756. Valid loss: 0.5957382917404175
+2023-11-20 13:31:37,472 - root - INFO - Time taken for epoch 33 is 10.25012731552124 sec
+2023-11-20 13:31:37,473 - root - INFO - Train loss: 0.6009781360626221. Valid loss: 0.5960687398910522
+2023-11-20 13:31:51,948 - root - INFO - Time taken for epoch 34 is 14.47395658493042 sec
+2023-11-20 13:31:51,949 - root - INFO - Train loss: 0.5959831476211548. Valid loss: 0.5874294638633728
+2023-11-20 13:32:02,265 - root - INFO - Time taken for epoch 35 is 10.316211223602295 sec
+2023-11-20 13:32:02,266 - root - INFO - Train loss: 0.6042242050170898. Valid loss: 0.5930396914482117
+2023-11-20 13:32:12,574 - root - INFO - Time taken for epoch 36 is 10.307241439819336 sec
+2023-11-20 13:32:12,575 - root - INFO - Train loss: 0.5979077219963074. Valid loss: 0.589514434337616
+2023-11-20 13:32:22,879 - root - INFO - Time taken for epoch 37 is 10.303905963897705 sec
+2023-11-20 13:32:22,880 - root - INFO - Train loss: 0.5929151773452759. Valid loss: 0.5906538963317871
+2023-11-20 13:32:37,478 - root - INFO - Time taken for epoch 38 is 14.597488403320312 sec
+2023-11-20 13:32:37,480 - root - INFO - Train loss: 0.5956957340240479. Valid loss: 0.5852600336074829
+2023-11-20 13:32:47,677 - root - INFO - Time taken for epoch 39 is 10.196858882904053 sec
+2023-11-20 13:32:47,678 - root - INFO - Train loss: 0.5959101319313049. Valid loss: 0.5883932113647461
+2023-11-20 13:33:02,086 - root - INFO - Time taken for epoch 40 is 14.407914400100708 sec
+2023-11-20 13:33:02,087 - root - INFO - Train loss: 0.5903385281562805. Valid loss: 0.5826829671859741
+2023-11-20 13:33:12,501 - root - INFO - Time taken for epoch 41 is 10.413666009902954 sec
+2023-11-20 13:33:12,502 - root - INFO - Train loss: 0.5968831777572632. Valid loss: 0.5869721174240112
+2023-11-20 13:33:27,021 - root - INFO - Time taken for epoch 42 is 14.51863169670105 sec
+2023-11-20 13:33:27,022 - root - INFO - Train loss: 0.5845091342926025. Valid loss: 0.5798606872558594
+2023-11-20 13:33:41,626 - root - INFO - Time taken for epoch 43 is 14.603346586227417 sec
+2023-11-20 13:33:41,627 - root - INFO - Train loss: 0.578697919845581. Valid loss: 0.5671176910400391
+2023-11-20 13:33:51,865 - root - INFO - Time taken for epoch 44 is 10.238375663757324 sec
+2023-11-20 13:33:51,866 - root - INFO - Train loss: 0.587483286857605. Valid loss: 0.5769170522689819
+2023-11-20 13:34:02,342 - root - INFO - Time taken for epoch 45 is 10.475953340530396 sec
+2023-11-20 13:34:02,344 - root - INFO - Train loss: 0.5812893509864807. Valid loss: 0.5725273489952087
+2023-11-20 13:34:12,638 - root - INFO - Time taken for epoch 46 is 10.294406175613403 sec
+2023-11-20 13:34:12,639 - root - INFO - Train loss: 0.5707359313964844. Valid loss: 0.5691090822219849
+2023-11-20 13:34:27,123 - root - INFO - Time taken for epoch 47 is 14.482994079589844 sec
+2023-11-20 13:34:27,124 - root - INFO - Train loss: 0.575686514377594. Valid loss: 0.5655576586723328
+2023-11-20 13:34:37,372 - root - INFO - Time taken for epoch 48 is 10.24780559539795 sec
+2023-11-20 13:34:37,373 - root - INFO - Train loss: 0.5804673433303833. Valid loss: 0.574522852897644
+2023-11-20 13:34:51,796 - root - INFO - Time taken for epoch 49 is 14.401638984680176 sec
+2023-11-20 13:34:51,797 - root - INFO - Train loss: 0.565786600112915. Valid loss: 0.5629882216453552
+2023-11-20 13:35:06,188 - root - INFO - Time taken for epoch 50 is 14.390629768371582 sec
+2023-11-20 13:35:06,189 - root - INFO - Train loss: 0.5674806833267212. Valid loss: 0.5626522302627563
+2023-11-20 13:35:21,150 - root - INFO - Time taken for epoch 51 is 14.96084213256836 sec
+2023-11-20 13:35:21,151 - root - INFO - Train loss: 0.5614007711410522. Valid loss: 0.5580282807350159
+2023-11-20 13:35:35,917 - root - INFO - Time taken for epoch 52 is 14.765357494354248 sec
+2023-11-20 13:35:35,918 - root - INFO - Train loss: 0.5577272772789001. Valid loss: 0.5511811375617981
+2023-11-20 13:35:46,255 - root - INFO - Time taken for epoch 53 is 10.337252140045166 sec
+2023-11-20 13:35:46,256 - root - INFO - Train loss: 0.5658639669418335. Valid loss: 0.5598759055137634
+2023-11-20 13:35:56,514 - root - INFO - Time taken for epoch 54 is 10.257654666900635 sec
+2023-11-20 13:35:56,540 - root - INFO - Train loss: 0.5566587448120117. Valid loss: 0.557131290435791
+2023-11-20 13:36:06,855 - root - INFO - Time taken for epoch 55 is 10.314525842666626 sec
+2023-11-20 13:36:06,867 - root - INFO - Train loss: 0.5558727979660034. Valid loss: 0.555420994758606
+2023-11-20 13:36:17,000 - root - INFO - Time taken for epoch 56 is 10.132449865341187 sec
+2023-11-20 13:36:17,001 - root - INFO - Train loss: 0.5586628913879395. Valid loss: 0.5518821477890015
+2023-11-20 13:36:27,186 - root - INFO - Time taken for epoch 57 is 10.18466329574585 sec
+2023-11-20 13:36:27,187 - root - INFO - Train loss: 0.5630040764808655. Valid loss: 0.5587899088859558
+2023-11-20 13:36:37,244 - root - INFO - Time taken for epoch 58 is 10.056866884231567 sec
+2023-11-20 13:36:37,245 - root - INFO - Train loss: 0.5531224012374878. Valid loss: 0.5517902374267578
+2023-11-20 13:36:51,484 - root - INFO - Time taken for epoch 59 is 14.23807144165039 sec
+2023-11-20 13:36:51,485 - root - INFO - Train loss: 0.547459602355957. Valid loss: 0.5449773669242859
+2023-11-20 13:37:05,908 - root - INFO - Time taken for epoch 60 is 14.422454833984375 sec
+2023-11-20 13:37:05,909 - root - INFO - Train loss: 0.544232189655304. Valid loss: 0.5424893498420715
+2023-11-20 13:37:16,119 - root - INFO - Time taken for epoch 61 is 10.210129261016846 sec
+2023-11-20 13:37:16,121 - root - INFO - Train loss: 0.5462971925735474. Valid loss: 0.5464218258857727
+2023-11-20 13:37:26,372 - root - INFO - Time taken for epoch 62 is 10.250854015350342 sec
+2023-11-20 13:37:26,395 - root - INFO - Train loss: 0.5478454232215881. Valid loss: 0.542556881904602
+2023-11-20 13:37:36,845 - root - INFO - Time taken for epoch 63 is 10.450196504592896 sec
+2023-11-20 13:37:36,846 - root - INFO - Train loss: 0.5460506081581116. Valid loss: 0.5436409711837769
+2023-11-20 13:37:51,310 - root - INFO - Time taken for epoch 64 is 14.462937831878662 sec
+2023-11-20 13:37:51,311 - root - INFO - Train loss: 0.533100962638855. Valid loss: 0.5354152917861938
+2023-11-20 13:38:05,701 - root - INFO - Time taken for epoch 65 is 14.390618085861206 sec
+2023-11-20 13:38:05,703 - root - INFO - Train loss: 0.5393035411834717. Valid loss: 0.5347689390182495
+2023-11-20 13:38:15,943 - root - INFO - Time taken for epoch 66 is 10.240395307540894 sec
+2023-11-20 13:38:15,944 - root - INFO - Train loss: 0.5519689917564392. Valid loss: 0.544914722442627
+2023-11-20 13:38:26,112 - root - INFO - Time taken for epoch 67 is 10.167311191558838 sec
+2023-11-20 13:38:26,113 - root - INFO - Train loss: 0.5383899807929993. Valid loss: 0.5400315523147583
+2023-11-20 13:38:36,252 - root - INFO - Time taken for epoch 68 is 10.136156558990479 sec
+2023-11-20 13:38:36,253 - root - INFO - Train loss: 0.5360907316207886. Valid loss: 0.5390132069587708
+2023-11-20 13:38:50,508 - root - INFO - Time taken for epoch 69 is 14.254867315292358 sec
+2023-11-20 13:38:50,509 - root - INFO - Train loss: 0.5287705659866333. Valid loss: 0.5310451984405518
+2023-11-20 13:39:05,124 - root - INFO - Time taken for epoch 70 is 14.614346027374268 sec
+2023-11-20 13:39:05,125 - root - INFO - Train loss: 0.5221826434135437. Valid loss: 0.524267315864563
+2023-11-20 13:39:19,502 - root - INFO - Time taken for epoch 71 is 14.37383246421814 sec
+2023-11-20 13:39:19,503 - root - INFO - Train loss: 0.518388569355011. Valid loss: 0.5210412740707397
+2023-11-20 13:39:33,955 - root - INFO - Time taken for epoch 72 is 14.452090501785278 sec
+2023-11-20 13:39:33,956 - root - INFO - Train loss: 0.5175793170928955. Valid loss: 0.5188412666320801
+2023-11-20 13:39:41,961 - root - INFO - Time taken for epoch 73 is 8.004953622817993 sec
+2023-11-20 13:39:41,962 - root - INFO - Train loss: 0.5181261301040649. Valid loss: 0.5202333331108093
+2023-11-20 13:39:52,206 - root - INFO - Time taken for epoch 74 is 10.243539810180664 sec
+2023-11-20 13:39:52,207 - root - INFO - Train loss: 0.5211557149887085. Valid loss: 0.5227128267288208
+2023-11-20 13:40:02,447 - root - INFO - Time taken for epoch 75 is 10.239917755126953 sec
+2023-11-20 13:40:02,449 - root - INFO - Train loss: 0.5224636793136597. Valid loss: 0.5254374742507935
+2023-11-20 13:40:12,664 - root - INFO - Time taken for epoch 76 is 10.215416431427002 sec
+2023-11-20 13:40:12,666 - root - INFO - Train loss: 0.5182420015335083. Valid loss: 0.5208731293678284
+2023-11-20 13:40:27,528 - root - INFO - Time taken for epoch 77 is 14.862342834472656 sec
+2023-11-20 13:40:27,529 - root - INFO - Train loss: 0.511587381362915. Valid loss: 0.5172059535980225
+2023-11-20 13:40:42,325 - root - INFO - Time taken for epoch 78 is 14.795104265213013 sec
+2023-11-20 13:40:42,326 - root - INFO - Train loss: 0.5090276002883911. Valid loss: 0.511316180229187
+2023-11-20 13:40:56,818 - root - INFO - Time taken for epoch 79 is 14.491690635681152 sec
+2023-11-20 13:40:56,819 - root - INFO - Train loss: 0.5061741471290588. Valid loss: 0.5099809765815735
+2023-11-20 13:41:11,316 - root - INFO - Time taken for epoch 80 is 14.497283935546875 sec
+2023-11-20 13:41:11,317 - root - INFO - Train loss: 0.5058942437171936. Valid loss: 0.5098294019699097
+2023-11-20 13:41:25,750 - root - INFO - Time taken for epoch 81 is 14.432254314422607 sec
+2023-11-20 13:41:25,751 - root - INFO - Train loss: 0.5043210387229919. Valid loss: 0.5084007978439331
+2023-11-20 13:41:40,200 - root - INFO - Time taken for epoch 82 is 14.449004650115967 sec
+2023-11-20 13:41:40,201 - root - INFO - Train loss: 0.506179690361023. Valid loss: 0.5080264210700989
+2023-11-20 13:41:50,541 - root - INFO - Time taken for epoch 83 is 10.33968710899353 sec
+2023-11-20 13:41:50,542 - root - INFO - Train loss: 0.5068246722221375. Valid loss: 0.50953209400177
+2023-11-20 13:42:00,880 - root - INFO - Time taken for epoch 84 is 10.337194204330444 sec
+2023-11-20 13:42:00,881 - root - INFO - Train loss: 0.5038843750953674. Valid loss: 0.510269284248352
+2023-11-20 13:42:11,141 - root - INFO - Time taken for epoch 85 is 10.259429693222046 sec
+2023-11-20 13:42:11,142 - root - INFO - Train loss: 0.5040333271026611. Valid loss: 0.5086914300918579
+2023-11-20 13:42:25,546 - root - INFO - Time taken for epoch 86 is 14.403883457183838 sec
+2023-11-20 13:42:25,547 - root - INFO - Train loss: 0.5029860138893127. Valid loss: 0.5076404213905334
+2023-11-20 13:42:39,909 - root - INFO - Time taken for epoch 87 is 14.360820293426514 sec
+2023-11-20 13:42:39,910 - root - INFO - Train loss: 0.49949005246162415. Valid loss: 0.5059040784835815
+2023-11-20 13:42:54,215 - root - INFO - Time taken for epoch 88 is 14.304375648498535 sec
+2023-11-20 13:42:54,216 - root - INFO - Train loss: 0.4978693425655365. Valid loss: 0.5034550428390503
+2023-11-20 13:43:08,413 - root - INFO - Time taken for epoch 89 is 14.196863889694214 sec
+2023-11-20 13:43:08,414 - root - INFO - Train loss: 0.49683207273483276. Valid loss: 0.5024476647377014
+2023-11-20 13:43:22,776 - root - INFO - Time taken for epoch 90 is 14.361740350723267 sec
+2023-11-20 13:43:22,777 - root - INFO - Train loss: 0.49491775035858154. Valid loss: 0.5008763074874878
+2023-11-20 13:43:37,301 - root - INFO - Time taken for epoch 91 is 14.523350238800049 sec
+2023-11-20 13:43:37,302 - root - INFO - Train loss: 0.49453145265579224. Valid loss: 0.5003395676612854
+2023-11-20 13:43:51,658 - root - INFO - Time taken for epoch 92 is 14.355815172195435 sec
+2023-11-20 13:43:51,659 - root - INFO - Train loss: 0.4939398169517517. Valid loss: 0.4998484253883362
+2023-11-20 13:44:06,073 - root - INFO - Time taken for epoch 93 is 14.413869857788086 sec
+2023-11-20 13:44:06,074 - root - INFO - Train loss: 0.4934568405151367. Valid loss: 0.49945178627967834
+2023-11-20 13:44:20,507 - root - INFO - Time taken for epoch 94 is 14.432206630706787 sec
+2023-11-20 13:44:20,508 - root - INFO - Train loss: 0.4927859902381897. Valid loss: 0.49883994460105896
+2023-11-20 13:44:35,031 - root - INFO - Time taken for epoch 95 is 14.52304196357727 sec
+2023-11-20 13:44:35,032 - root - INFO - Train loss: 0.4925304353237152. Valid loss: 0.4984780251979828
+2023-11-20 13:44:49,363 - root - INFO - Time taken for epoch 96 is 14.330633163452148 sec
+2023-11-20 13:44:49,364 - root - INFO - Train loss: 0.492790162563324. Valid loss: 0.4980660378932953
+2023-11-20 13:44:59,707 - root - INFO - Time taken for epoch 97 is 10.342148065567017 sec
+2023-11-20 13:44:59,708 - root - INFO - Train loss: 0.4918642044067383. Valid loss: 0.4983232915401459
+2023-11-20 13:45:14,141 - root - INFO - Time taken for epoch 98 is 14.432080507278442 sec
+2023-11-20 13:45:14,141 - root - INFO - Train loss: 0.4935847520828247. Valid loss: 0.49753719568252563
+2023-11-20 13:45:28,581 - root - INFO - Time taken for epoch 99 is 14.43941617012024 sec
+2023-11-20 13:45:28,582 - root - INFO - Train loss: 0.4914405047893524. Valid loss: 0.49740591645240784
+2023-11-20 13:45:38,644 - root - INFO - Time taken for epoch 100 is 10.0616934299469 sec
+2023-11-20 13:45:38,645 - root - INFO - Train loss: 0.49184924364089966. Valid loss: 0.4986345171928406
+2023-11-20 13:45:48,828 - root - INFO - Time taken for epoch 101 is 10.182954788208008 sec
+2023-11-20 13:45:48,829 - root - INFO - Train loss: 0.4912245571613312. Valid loss: 0.4995732307434082
+2023-11-20 13:46:03,200 - root - INFO - Time taken for epoch 102 is 14.369936227798462 sec
+2023-11-20 13:46:03,201 - root - INFO - Train loss: 0.49056535959243774. Valid loss: 0.4966438412666321
+2023-11-20 13:46:13,296 - root - INFO - Time taken for epoch 103 is 10.094480991363525 sec
+2023-11-20 13:46:13,297 - root - INFO - Train loss: 0.4894738793373108. Valid loss: 0.4970276355743408
+2023-11-20 13:46:27,109 - root - INFO - Time taken for epoch 104 is 13.812248468399048 sec
+2023-11-20 13:46:27,110 - root - INFO - Train loss: 0.48871076107025146. Valid loss: 0.49543699622154236
+2023-11-20 13:46:41,610 - root - INFO - Time taken for epoch 105 is 14.499589681625366 sec
+2023-11-20 13:46:41,611 - root - INFO - Train loss: 0.4881840944290161. Valid loss: 0.4943877160549164
+2023-11-20 13:46:55,944 - root - INFO - Time taken for epoch 106 is 14.332439422607422 sec
+2023-11-20 13:46:55,945 - root - INFO - Train loss: 0.4878578186035156. Valid loss: 0.49411019682884216
+2023-11-20 13:47:10,211 - root - INFO - Time taken for epoch 107 is 14.265018463134766 sec
+2023-11-20 13:47:10,212 - root - INFO - Train loss: 0.4875462055206299. Valid loss: 0.4937922954559326
+2023-11-20 13:47:24,787 - root - INFO - Time taken for epoch 108 is 14.575441837310791 sec
+2023-11-20 13:47:24,788 - root - INFO - Train loss: 0.4871494174003601. Valid loss: 0.49346238374710083
+2023-11-20 13:47:39,328 - root - INFO - Time taken for epoch 109 is 14.539261817932129 sec
+2023-11-20 13:47:39,329 - root - INFO - Train loss: 0.48683810234069824. Valid loss: 0.49309033155441284
+2023-11-20 13:47:53,583 - root - INFO - Time taken for epoch 110 is 14.253224611282349 sec
+2023-11-20 13:47:53,584 - root - INFO - Train loss: 0.4866166412830353. Valid loss: 0.4928134083747864
+2023-11-20 13:48:08,019 - root - INFO - Time taken for epoch 111 is 14.434364795684814 sec
+2023-11-20 13:48:08,020 - root - INFO - Train loss: 0.4862544536590576. Valid loss: 0.49280938506126404
+2023-11-20 13:48:22,360 - root - INFO - Time taken for epoch 112 is 14.340009689331055 sec
+2023-11-20 13:48:22,361 - root - INFO - Train loss: 0.4859512746334076. Valid loss: 0.4923877716064453
+2023-11-20 13:48:36,954 - root - INFO - Time taken for epoch 113 is 14.59278392791748 sec
+2023-11-20 13:48:36,955 - root - INFO - Train loss: 0.4858202040195465. Valid loss: 0.4921344816684723
+2023-11-20 13:48:50,713 - root - INFO - Time taken for epoch 114 is 13.757148504257202 sec
+2023-11-20 13:48:50,714 - root - INFO - Train loss: 0.48544853925704956. Valid loss: 0.492046982049942
+2023-11-20 13:49:05,219 - root - INFO - Time taken for epoch 115 is 14.505086183547974 sec
+2023-11-20 13:49:05,220 - root - INFO - Train loss: 0.4851558208465576. Valid loss: 0.49169912934303284
+2023-11-20 13:49:19,685 - root - INFO - Time taken for epoch 116 is 14.464134931564331 sec
+2023-11-20 13:49:19,686 - root - INFO - Train loss: 0.484913170337677. Valid loss: 0.4914678633213043
+2023-11-20 13:49:33,961 - root - INFO - Time taken for epoch 117 is 14.274426221847534 sec
+2023-11-20 13:49:33,962 - root - INFO - Train loss: 0.4846934676170349. Valid loss: 0.4912732243537903
+2023-11-20 13:49:48,450 - root - INFO - Time taken for epoch 118 is 14.487012147903442 sec
+2023-11-20 13:49:48,451 - root - INFO - Train loss: 0.48447418212890625. Valid loss: 0.4911031723022461
+2023-11-20 13:50:02,791 - root - INFO - Time taken for epoch 119 is 14.33997106552124 sec
+2023-11-20 13:50:02,792 - root - INFO - Train loss: 0.48423531651496887. Valid loss: 0.4909745156764984
+2023-11-20 13:50:17,102 - root - INFO - Time taken for epoch 120 is 14.309043169021606 sec
+2023-11-20 13:50:17,103 - root - INFO - Train loss: 0.48396822810173035. Valid loss: 0.4908180236816406
+2023-11-20 13:50:31,591 - root - INFO - Time taken for epoch 121 is 14.488395690917969 sec
+2023-11-20 13:50:31,592 - root - INFO - Train loss: 0.4837494194507599. Valid loss: 0.49061140418052673
+2023-11-20 13:50:45,990 - root - INFO - Time taken for epoch 122 is 14.397073030471802 sec
+2023-11-20 13:50:45,991 - root - INFO - Train loss: 0.48357734084129333. Valid loss: 0.4904457926750183
+2023-11-20 13:51:00,775 - root - INFO - Time taken for epoch 123 is 14.784034490585327 sec
+2023-11-20 13:51:00,776 - root - INFO - Train loss: 0.48338639736175537. Valid loss: 0.49030670523643494
+2023-11-20 13:51:15,372 - root - INFO - Time taken for epoch 124 is 14.595804452896118 sec
+2023-11-20 13:51:15,374 - root - INFO - Train loss: 0.4832024574279785. Valid loss: 0.49016159772872925
+2023-11-20 13:51:29,773 - root - INFO - Time taken for epoch 125 is 14.398926258087158 sec
+2023-11-20 13:51:29,774 - root - INFO - Train loss: 0.48302334547042847. Valid loss: 0.4900040626525879
+2023-11-20 13:51:44,231 - root - INFO - Time taken for epoch 126 is 14.456181764602661 sec
+2023-11-20 13:51:44,232 - root - INFO - Train loss: 0.4828606843948364. Valid loss: 0.48984774947166443
+2023-11-20 13:51:57,484 - root - INFO - Time taken for epoch 127 is 13.251010179519653 sec
+2023-11-20 13:51:57,996 - root - INFO - Train loss: 0.48271775245666504. Valid loss: 0.48971039056777954
+2023-11-20 13:52:12,402 - root - INFO - Time taken for epoch 128 is 14.4061119556427 sec
+2023-11-20 13:52:12,404 - root - INFO - Train loss: 0.4825795888900757. Valid loss: 0.4895842969417572
+2023-11-20 13:52:26,727 - root - INFO - Time taken for epoch 129 is 14.323168516159058 sec
+2023-11-20 13:52:26,728 - root - INFO - Train loss: 0.48245298862457275. Valid loss: 0.48946529626846313
+2023-11-20 13:52:41,039 - root - INFO - Time taken for epoch 130 is 14.311329364776611 sec
+2023-11-20 13:52:41,041 - root - INFO - Train loss: 0.48234111070632935. Valid loss: 0.4893718659877777
+2023-11-20 13:52:55,379 - root - INFO - Time taken for epoch 131 is 14.337624788284302 sec
+2023-11-20 13:52:55,380 - root - INFO - Train loss: 0.4822358191013336. Valid loss: 0.4892946779727936
+2023-11-20 13:53:09,966 - root - INFO - Time taken for epoch 132 is 14.585830450057983 sec
+2023-11-20 13:53:09,967 - root - INFO - Train loss: 0.4821398854255676. Valid loss: 0.48922792077064514
+2023-11-20 13:53:24,496 - root - INFO - Time taken for epoch 133 is 14.52798080444336 sec
+2023-11-20 13:53:24,497 - root - INFO - Train loss: 0.4820554554462433. Valid loss: 0.4891662001609802
+2023-11-20 13:53:38,976 - root - INFO - Time taken for epoch 134 is 14.478746891021729 sec
+2023-11-20 13:53:38,977 - root - INFO - Train loss: 0.48198336362838745. Valid loss: 0.48910799622535706
+2023-11-20 13:53:53,828 - root - INFO - Time taken for epoch 135 is 14.85033655166626 sec
+2023-11-20 13:53:53,829 - root - INFO - Train loss: 0.4819176197052002. Valid loss: 0.48905476927757263
+2023-11-20 13:54:08,435 - root - INFO - Time taken for epoch 136 is 14.605875968933105 sec
+2023-11-20 13:54:08,436 - root - INFO - Train loss: 0.4818645417690277. Valid loss: 0.4890054166316986
+2023-11-20 13:54:22,995 - root - INFO - Time taken for epoch 137 is 14.558234930038452 sec
+2023-11-20 13:54:22,996 - root - INFO - Train loss: 0.4818263649940491. Valid loss: 0.4889621138572693
+2023-11-20 13:54:37,476 - root - INFO - Time taken for epoch 138 is 14.479719400405884 sec
+2023-11-20 13:54:37,477 - root - INFO - Train loss: 0.48180603981018066. Valid loss: 0.4889245629310608
+2023-11-20 13:54:48,719 - root - INFO - Time taken for epoch 139 is 11.24117922782898 sec
+2023-11-20 13:54:48,719 - root - INFO - Train loss: 0.4817875027656555. Valid loss: 0.4888801574707031
+2023-11-20 13:55:03,321 - root - INFO - Time taken for epoch 140 is 14.60136079788208 sec
+2023-11-20 13:55:03,322 - root - INFO - Train loss: 0.48176640272140503. Valid loss: 0.48881635069847107
+2023-11-20 13:55:18,041 - root - INFO - Time taken for epoch 141 is 14.718541860580444 sec
+2023-11-20 13:55:18,042 - root - INFO - Train loss: 0.4817565977573395. Valid loss: 0.4887614846229553
+2023-11-20 13:55:32,559 - root - INFO - Time taken for epoch 142 is 14.51671814918518 sec
+2023-11-20 13:55:32,560 - root - INFO - Train loss: 0.48174118995666504. Valid loss: 0.48873820900917053
+2023-11-20 13:55:47,031 - root - INFO - Time taken for epoch 143 is 14.470477104187012 sec
+2023-11-20 13:55:47,032 - root - INFO - Train loss: 0.48170387744903564. Valid loss: 0.4887247681617737
+2023-11-20 13:56:01,570 - root - INFO - Time taken for epoch 144 is 14.5377357006073 sec
+2023-11-20 13:56:01,571 - root - INFO - Train loss: 0.4816752076148987. Valid loss: 0.4887118339538574
+2023-11-20 13:56:15,842 - root - INFO - Time taken for epoch 145 is 14.270373582839966 sec
+2023-11-20 13:56:15,843 - root - INFO - Train loss: 0.48165857791900635. Valid loss: 0.48870396614074707
+2023-11-20 13:56:30,322 - root - INFO - Time taken for epoch 146 is 14.478165626525879 sec
+2023-11-20 13:56:30,324 - root - INFO - Train loss: 0.48164528608322144. Valid loss: 0.488699346780777
+2023-11-20 13:56:44,656 - root - INFO - Time taken for epoch 147 is 14.332185745239258 sec
+2023-11-20 13:56:44,657 - root - INFO - Train loss: 0.48163652420043945. Valid loss: 0.4886963963508606
+2023-11-20 13:56:59,022 - root - INFO - Time taken for epoch 148 is 14.364280700683594 sec
+2023-11-20 13:56:59,023 - root - INFO - Train loss: 0.4816301465034485. Valid loss: 0.4886947572231293
+2023-11-20 13:57:13,902 - root - INFO - Time taken for epoch 149 is 14.87878966331482 sec
+2023-11-20 13:57:13,903 - root - INFO - Train loss: 0.48162636160850525. Valid loss: 0.4886940121650696
+2023-11-20 13:57:19,891 - root - INFO - Terminating training after reaching params.max_epochs while LR scheduler is set to CosineAnnealingLR
+2023-11-27 13:58:07,534 - root - INFO - --------------- Versions ---------------
+2023-11-27 13:58:07,539 - root - INFO - git branch: b'* master'
+2023-11-27 13:58:07,543 - root - INFO - git hash: b'ae35073fcba07f889317140de1b9ee82ebde434c'
+2023-11-27 13:58:07,543 - root - INFO - Torch: 2.1.0+cu121
+2023-11-27 13:58:07,544 - root - INFO - ----------------------------------------
+2023-11-27 13:58:07,544 - root - INFO - ------------------ Configuration ------------------
+2023-11-27 13:58:07,544 - root - INFO - Configuration file: /work2/phillip/FourCastNet/config/AFNO.yaml
+2023-11-27 13:58:07,544 - root - INFO - Configuration name: afno_backbone
+2023-11-27 13:58:07,544 - root - INFO - log_to_wandb True
+2023-11-27 13:58:07,544 - root - INFO - lr 0.0005
+2023-11-27 13:58:07,544 - root - INFO - batch_size 64
+2023-11-27 13:58:07,544 - root - INFO - max_epochs 150
+2023-11-27 13:58:07,544 - root - INFO - scheduler CosineAnnealingLR
+2023-11-27 13:58:07,544 - root - INFO - in_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-11-27 13:58:07,544 - root - INFO - out_channels [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+2023-11-27 13:58:07,544 - root - INFO - orography False
+2023-11-27 13:58:07,545 - root - INFO - orography_path None
+2023-11-27 13:58:07,545 - root - INFO - exp_dir results/era5_wind
+2023-11-27 13:58:07,545 - root - INFO - train_data_path ERA5_data_formatted/train
+2023-11-27 13:58:07,545 - root - INFO - valid_data_path ERA5_data_formatted/test
+2023-11-27 13:58:07,545 - root - INFO - inf_data_path ERA5_data_formatted/out_of_sample
+2023-11-27 13:58:07,545 - root - INFO - time_means_path ERA5_data_formatted/time_means.npy
+2023-11-27 13:58:07,545 - root - INFO - global_means_path ERA5_data_formatted/global_means.npy
+2023-11-27 13:58:07,545 - root - INFO - global_stds_path ERA5_data_formatted/global_stds.npy
+2023-11-27 13:58:07,545 - root - INFO - loss l2
+2023-11-27 13:58:07,545 - root - INFO - num_data_workers 4
+2023-11-27 13:58:07,545 - root - INFO - dt 1
+2023-11-27 13:58:07,545 - root - INFO - n_history 0
+2023-11-27 13:58:07,545 - root - INFO - prediction_type iterative
+2023-11-27 13:58:07,545 - root - INFO - prediction_length 41
+2023-11-27 13:58:07,545 - root - INFO - n_initial_conditions 5
+2023-11-27 13:58:07,545 - root - INFO - ics_type default
+2023-11-27 13:58:07,545 - root - INFO - save_raw_forecasts True
+2023-11-27 13:58:07,546 - root - INFO - save_channel False
+2023-11-27 13:58:07,546 - root - INFO - masked_acc False
+2023-11-27 13:58:07,546 - root - INFO - maskpath None
+2023-11-27 13:58:07,546 - root - INFO - perturb False
+2023-11-27 13:58:07,546 - root - INFO - add_grid False
+2023-11-27 13:58:07,546 - root - INFO - N_grid_channels 0
+2023-11-27 13:58:07,546 - root - INFO - gridtype sinusoidal
+2023-11-27 13:58:07,546 - root - INFO - roll False
+2023-11-27 13:58:07,546 - root - INFO - num_blocks 8
+2023-11-27 13:58:07,546 - root - INFO - nettype afno
+2023-11-27 13:58:07,546 - root - INFO - patch_size 8
+2023-11-27 13:58:07,546 - root - INFO - width 56
+2023-11-27 13:58:07,546 - root - INFO - modes 32
+2023-11-27 13:58:07,546 - root - INFO - target default
+2023-11-27 13:58:07,546 - root - INFO - normalization zscore
+2023-11-27 13:58:07,546 - root - INFO - log_to_screen True
+2023-11-27 13:58:07,546 - root - INFO - save_checkpoint True
+2023-11-27 13:58:07,546 - root - INFO - enable_nhwc False
+2023-11-27 13:58:07,547 - root - INFO - optimizer_type FusedAdam
+2023-11-27 13:58:07,547 - root - INFO - crop_size_x None
+2023-11-27 13:58:07,547 - root - INFO - crop_size_y None
+2023-11-27 13:58:07,547 - root - INFO - two_step_training False
+2023-11-27 13:58:07,547 - root - INFO - plot_animations False
+2023-11-27 13:58:07,547 - root - INFO - add_noise False
+2023-11-27 13:58:07,547 - root - INFO - noise_std 0
+2023-11-27 13:58:07,547 - root - INFO - epsilon_factor 0
+2023-11-27 13:58:07,547 - root - INFO - world_size 1
+2023-11-27 13:58:07,547 - root - INFO - experiment_dir /work2/phillip/FourCastNet/results/era5_wind/afno_backbone/half
+2023-11-27 13:58:07,547 - root - INFO - checkpoint_path results/era5_wind/afno_backbone/half/training_checkpoints/ckpt.tar
+2023-11-27 13:58:07,547 - root - INFO - best_checkpoint_path results/era5_wind/afno_backbone/half/training_checkpoints/best_ckpt.tar
+2023-11-27 13:58:07,547 - root - INFO - resuming True
+2023-11-27 13:58:07,547 - root - INFO - local_rank 0
+2023-11-27 13:58:07,547 - root - INFO - enable_amp True
+2023-11-27 13:58:07,547 - root - INFO - name afno_backbone_half
+2023-11-27 13:58:07,547 - root - INFO - group era5_precipafno_backbone
+2023-11-27 13:58:07,547 - root - INFO - project fourcastnet
+2023-11-27 13:58:07,547 - root - INFO - entity psi6
+2023-11-27 13:58:07,548 - root - INFO - ---------------------------------------------------
+2023-11-27 13:58:11,616 - root - INFO - rank 0, begin data loader init
+2023-11-27 13:58:11,620 - root - INFO - Getting file stats from ERA5_data_formatted/train/2012.h5
+2023-11-27 13:58:11,622 - root - INFO - Number of samples per year: 365
+2023-11-27 13:58:11,623 - root - INFO - Found data at path ERA5_data_formatted/train. Number of examples: 1460. Image Shape: 72 x 144 x 20
+2023-11-27 13:58:11,623 - root - INFO - Delta t: 6 hours
+2023-11-27 13:58:11,623 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-11-27 13:58:11,625 - root - INFO - Getting file stats from ERA5_data_formatted/test/2016.h5
+2023-11-27 13:58:11,625 - root - INFO - Number of samples per year: 365
+2023-11-27 13:58:11,625 - root - INFO - Found data at path ERA5_data_formatted/test. Number of examples: 365. Image Shape: 72 x 144 x 20
+2023-11-27 13:58:11,626 - root - INFO - Delta t: 6 hours
+2023-11-27 13:58:11,626 - root - INFO - Including 0 hours of past history in training at a frequency of 6 hours
+2023-11-27 13:58:11,626 - root - INFO - rank 0, data loader initialized
+2023-11-27 13:58:13,461 - root - INFO - Loading checkpoint results/era5_wind/afno_backbone/half/training_checkpoints/ckpt.tar
+2023-11-27 13:58:15,928 - root - INFO - Number of trainable model parameters: 62374656
+2023-11-27 13:58:15,928 - root - INFO - Starting Training Loop...
+2023-11-27 13:58:28,864 - root - INFO - Terminating training after reaching params.max_epochs while LR scheduler is set to CosineAnnealingLR

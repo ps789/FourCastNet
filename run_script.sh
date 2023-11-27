@@ -2,7 +2,7 @@
 
 config_file=./config/AFNO.yaml
 config='afno_backbone'
-run_num='0'
+run_num='mass'
 
 export HDF5_USE_FILE_LOCKING=FALSE
 export NCCL_NET_GDR_LEVEL=PHB

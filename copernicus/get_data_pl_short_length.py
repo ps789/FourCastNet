@@ -2,7 +2,7 @@ import cdsapi
 
 c = cdsapi.Client()
 #years = ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017']
-years = ['2016', '2017']
+years = ['2013', '2014', '2015', '2016', '2017']
 for year in years:
     c.retrieve(
         'reanalysis-era5-pressure-levels',
@@ -10,7 +10,7 @@ for year in years:
             'product_type': 'reanalysis',
             'format': 'netcdf',
             'variable': [
-                'geopotential', 'relative_humidity', 'temperature',
+                'geopotential', 'relative_humidity', 'specific_humidity', 'temperature',
                 'u_component_of_wind', 'v_component_of_wind',
             ],
             'pressure_level': [

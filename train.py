@@ -77,6 +77,10 @@ import json
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap as ruamelDict
 
+from physics_loss import MassLoss
+
+physics_loss_fn = torch.nn.MSELoss()
+
 class Trainer():
   def count_parameters(self):
     return sum(p.numel() for p in self.model.parameters() if p.requires_grad)
@@ -239,21 +243,24 @@ class Trainer():
 #        if epoch==self.params.max_epochs-1 and self.params.prediction_type == 'direct':
 #          logging.info('Final Valid RMSE: Z500- {}. T850- {}, 2m_T- {}'.format(valid_weighted_rmse[0], valid_weighted_rmse[1], valid_weighted_rmse[2]))
 
-
-
   def train_one_epoch(self):
     self.epoch += 1
     tr_time = 0
     data_time = 0
     self.model.train()
+    x = torch.linspace(1, 2*np.pi, 144).unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(1, 1, 72, 1).to(self.device)
+    y = torch.linspace(1, np.pi, 72).unsqueeze(1).unsqueeze(0).unsqueeze(0).repeat(1, 1, 1, 144).to(self.device)
+    x.requires_grad_()
+    y.requires_grad_()
     
     for i, data in enumerate(self.train_data_loader, 0):
       self.iters += 1
       # adjust_LR(optimizer, params, iters)
       data_start = time.time()
-      inp, tar = map(lambda x: x.to(self.device, dtype = torch.float), data)      
+      inp, tar = map(lambda x: x.to(self.device, dtype = torch.float), data)
       if self.params.orography and self.params.two_step_training:
           orog = inp[:,-2:-1] 
+      inp = torch.cat([inp, x.repeat(inp.shape[0], 1, 1, 1), y.repeat(inp.shape[0], 1, 1, 1)], dim = 1)
 
 
       if self.params.enable_nhwc:
@@ -284,9 +291,10 @@ class Trainer():
               with torch.no_grad():
                 inp = self.model_wind(inp).to(self.device, dtype = torch.float)
               gen = self.model(inp.detach()).to(self.device, dtype = torch.float)
-            else:
+            else: 
               gen = self.model(inp).to(self.device, dtype = torch.float)
-            loss = self.loss_obj(gen, tar)
+            loss = MassLoss(physics_loss_fn, gen[:, [0, 6, 9, 12], :, :], gen[:, [1, 7, 10, 13], :, :], x, y)
+            loss += self.loss_obj(gen[:, :20], tar)
 
       if self.params.enable_amp:
         self.gscaler.scale(loss).backward()
@@ -331,6 +339,8 @@ class Trainer():
     valid_weighted_acc = torch.zeros((self.params.N_out_channels), dtype=torch.float32, device=self.device)
 
     valid_start = time.time()
+    x = torch.linspace(1, 2*np.pi, 144).unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(1, 1, 72, 1).to(self.device)
+    y = torch.linspace(1, np.pi, 72).unsqueeze(1).unsqueeze(0).unsqueeze(0).repeat(1, 1, 1, 144).to(self.device)
 
     sample_idx = np.random.randint(len(self.valid_data_loader))
     with torch.no_grad():
@@ -340,6 +350,7 @@ class Trainer():
         inp, tar  = map(lambda x: x.to(self.device, dtype = torch.float), data)
         if self.params.orography and self.params.two_step_training:
             orog = inp[:,-2:-1]
+        inp = torch.cat([inp, x.repeat(inp.shape[0], 1, 1, 1), y.repeat(inp.shape[0], 1, 1, 1)], dim = 1)
 
         if self.params.two_step_training:
             gen_step_one = self.model(inp).to(self.device, dtype = torch.float)
@@ -360,8 +371,7 @@ class Trainer():
                 gen = self.model(inp.detach())
             else:
                 gen = self.model(inp).to(self.device, dtype = torch.float)
-            valid_loss += self.loss_obj(gen, tar) 
-            valid_l1 += nn.functional.l1_loss(gen, tar)
+            valid_l1 += nn.functional.l1_loss(gen[:, :20], tar)
 
         valid_steps += 1.
         # save fields for vis before log norm 
@@ -448,6 +458,7 @@ class Trainer():
               orog = inp[:,-2:-1]
           if 'residual_field' in self.params.target:
             tar -= inp[:, 0:tar.size()[1]]
+          inp = torch.cat([inp, x.repeat(inp.shape[0], 1, 1, 1), y.repeat(inp.shape[0], 1, 1, 1)], dim = 1)
 
         if self.params.two_step_training:
             gen_step_one = self.model(inp).to(self.device, dtype = torch.float)
@@ -463,8 +474,8 @@ class Trainer():
             valid_l1[i] = nn.functional.l1_loss(gen_step_one, tar[:,0:self.params.N_out_channels])
         else:
             gen = self.model(inp)
-            valid_loss[i] += self.loss_obj(gen, tar) 
-            valid_l1[i] += nn.functional.l1_loss(gen, tar)
+            valid_loss[i] += self.loss_obj(gen[:, :20], tar) 
+            valid_l1[i] += nn.functional.l1_loss(gen[:, :20], tar)
 
         if self.params.two_step_training:
             for c in range(self.params.N_out_channels):
@@ -600,6 +611,7 @@ if __name__ == '__main__':
     params['N_in_channels'] = len(params['in_channels']) +1
   else:
     params['N_in_channels'] = len(params['in_channels'])
+  params['N_in_channels'] = len(params['in_channels'])+2
 
   params['N_out_channels'] = len(params['out_channels'])
 
